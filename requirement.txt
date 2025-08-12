@@ -34,7 +34,7 @@ fastapi
 uvicorn
 tiktoken
 datasets
-trl
+trl==0.7.2
 peft
 matplotlib
 jieba
