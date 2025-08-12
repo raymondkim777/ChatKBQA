@@ -1,6 +1,8 @@
 import torch
 from typing import Literal, Optional
 from dataclasses import dataclass, field
+import os
+
 
 
 @dataclass
@@ -20,7 +22,7 @@ class ModelArguments:
         metadata={"help": "Whether to use one of the fast tokenizer (backed by the tokenizers library) or not."}
     )
     use_auth_token: Optional[bool] = field(
-        default=False,
+        default=True,
         metadata={"help": "Will use the token generated when running `huggingface-cli login`."}
     )
     model_revision: Optional[str] = field(
@@ -64,7 +66,7 @@ class ModelArguments:
         metadata={"help": "Whether to plot the training loss after fine-tuning or not."}
     )
     hf_auth_token: Optional[str] = field(
-        default=None,
+        default=os.getenv("HF_AUTH_TOKEN"),
         metadata={"help": "Auth token to log in with Hugging Face Hub."}
     )
     layernorm_dtype: Optional[Literal["auto", "fp16", "bf16", "fp32"]] = field(
