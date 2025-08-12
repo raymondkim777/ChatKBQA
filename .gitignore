@@ -177,6 +177,7 @@ LLMs/models/*
 log/*
 LLMs/LLaMA/src/run_qlora.sh
 LLMs/LLaMA/src/run_train.sh
+LLMs/LLaMA/src/llmtuner/hparams/model_args.py
 generate_scripts/*
 evaluate_scripts/*
 LLMs/LLaMA1/*
