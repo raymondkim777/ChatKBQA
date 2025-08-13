@@ -63,13 +63,13 @@ def lisp_to_nested_expression(lisp_string):
     return current_expression[0]
 
 def get_symbol_type(symbol: str) -> int:
-    if symbol.__contains__('^^'):
+    if symbol.__contains__('^^'):  # literal
         return 2
     elif symbol in types:
         return 3
     elif symbol in relations:
         return 4
-    elif symbol:
+    elif symbol:  # entity
         return 1
 
 
