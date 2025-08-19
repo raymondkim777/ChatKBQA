@@ -377,7 +377,7 @@ def merge_all_data_for_logical_form_generation(dataset, split):
     merged_data_dir = f'data/{dataset}/generation/merged'
     if not os.path.exists(merged_data_dir):
         os.makedirs(merged_data_dir)
-    merged_data_file = f'{merged_data_dir}/{dataset}_{split}.json'
+    merged_data_file = f'{merged_data_dir}/{dataset}_{split}_original.json'
 
     print(f'Wrinting merged data to {merged_data_file}...')
     dump_json(merged_data_all,merged_data_file,indent=4)
