@@ -115,13 +115,13 @@ Run `python parse_sparql_cwq.py` and the augmented dataset files are saved as `d
 
 - WebQSP: 
 
-Run `python data_process.py --action merge_all --dataset WebQSP --split test` and `python data_process.py --action merge_all --dataset WebQSP --split train`. The merged data file will be saved as `data/WebQSP/generation/merged/WebQSP_test[train].json`.
+Run `python data_process.py --action merge_all --dataset WebQSP --split test` and `python data_process.py --action merge_all --dataset WebQSP --split train`. The merged data file will be saved as `data/WebQSP/generation/merged/WebQSP_test[train]_original.json`.
 
 Run `python data_process.py --action get_type_label_map --dataset WebQSP --split train`. The merged data file will be saved as `data/WebQSP/generation/label_maps/WebQSP_train_type_label_map.json`.
 
 - CWQ: 
 
-Run `python data_process.py --action merge_all --dataset CWQ --split test` and `python data_process.py --action merge_all --dataset CWQ --split train`. The merged data file will be saved as `data/CWQ/generation/merged/CWQ_test[train].json`.
+Run `python data_process.py --action merge_all --dataset CWQ --split test` and `python data_process.py --action merge_all --dataset CWQ --split train`. The merged data file will be saved as `data/CWQ/generation/merged/CWQ_test[train]_original.json`.
 
 Run `python data_process.py --action get_type_label_map --dataset CWQ --split train`. The merged data file will be saved as `data/CWQ/generation/label_maps/CWQ_train_type_label_map.json`.
 
@@ -139,17 +139,27 @@ ChatKBQA/
         └── sexpr/                                               
 ```
 
-(3) **Prepare data for LLM model**
+(3) **(Added) Update dataset with relation counts**
+
+- WebQSP:
+
+Run `python CUSTOM_data_process_rel_cnt.py -- dataset WebQSP`. Add `--log` to obtain log files. The updated data files will be saved as `data/WebQSP/generation/merged/WebQSP_test[train].json`.
+
+- CWQ:
+
+Run `python CUSTOM_data_process_rel_cnt.py -- dataset CWQ`. Add `--log` to obtain log files. The updated data files will be saved as `data/CWQ/generation/merged/CWQ_test[train].json`.
+
+(4) **Prepare data for LLM model**
 
 - WebQSP: 
 
-Run `python process_NQ.py --dataset_type WebQSP`. The merged data file will be saved as `LLMs/data/WebQSP_Freebase_NQ_test[train]/examples.json`.
+Run `python CUSTOM_process_NQ.py --dataset_type WebQSP`. The merged data file will be saved as `LLMs/data/WebQSP_Freebase_NQ_test[train]/examples.json`.
 
 - CWQ: 
 
-Run `python process_NQ.py --dataset_type CWQ` The merged data file will be saved as `LLMs/data/CWQ_Freebase_NQ_test[train]/examples.json`.
+Run `python CUSTOM_process_NQ.py --dataset_type CWQ` The merged data file will be saved as `LLMs/data/CWQ_Freebase_NQ_test[train]/examples.json`.
 
-**Note:** You can also get the processed ChatKBQA SFT data from [TeraBox](https://terabox.com/s/1YdKSzU3ScdQGkE-6lHV_fA) or [Baidu Netdisk](https://pan.baidu.com/s/1dazyWIQ8nYt5YiLt8yjFSw?pwd=uvd9), which should be set in `LLMs/data`.
+**Note:** The original processed ChatKBQA SFT data (from the original repository) can be found in [TeraBox](https://terabox.com/s/1YdKSzU3ScdQGkE-6lHV_fA) or [Baidu Netdisk](https://pan.baidu.com/s/1dazyWIQ8nYt5YiLt8yjFSw?pwd=uvd9), which should be set in `LLMs/data`. To recreate this repository's files, run (2), (3), and (4). 
 ```
 ChatKBQA/
 └── LLMs/
@@ -169,10 +179,10 @@ The following is an example of [LLaMa2-7b](README.md) fine-tuning and retrieval 
 
 - WebQSP: 
 
-Train LLMs for Logical Form Generation:
+Train LLMs for Logical Form Generation: (Note that terminal must be quit via `exit`, else process receives SIGHUP due to bug with nohup and DDP. For most streamlined use, use tmux.)
 
 ```bash
-CUDA_VISIBLE_DEVICES=3 nohup python -u LLMs/LLaMA/src/train_bash.py --stage sft --model_name_or_path meta-llama/Llama-2-7b-hf --do_train  --dataset_dir LLMs/data --dataset WebQSP_Freebase_NQ_train --template llama2  --finetuning_type lora --lora_target q_proj,v_proj --output_dir Reading/LLaMA2-7b/WebQSP_Freebase_NQ_lora_epoch100/checkpoint --overwrite_cache --per_device_train_batch_size 4 --gradient_accumulation_steps 4  --lr_scheduler_type cosine --logging_steps 10 --save_steps 1000 --learning_rate 5e-5  --num_train_epochs 100.0 --plot_loss  --fp16 >> train_LLaMA2-7b_WebQSP_Freebase_NQ_lora_epoch100.txt 2>&1 &
+CUDA_VISIBLE_DEVICES=2,3 nohup accelerate launch --num_processes 2 --num_machines 1  LLMs/LLaMA/src/train_bash.py --stage sft --model_name_or_path meta-llama/Llama-2-7b-hf --do_train  --dataset_dir LLMs/data --dataset WebQSP_Freebase_NQ_train --template llama2  --finetuning_type lora --lora_target q_proj,v_proj --output_dir Reading/LLaMA2-7b/WebQSP_Freebase_NQ_lora_epoch100/checkpoint --overwrite_cache --per_device_train_batch_size 4 --gradient_accumulation_steps 4  --lr_scheduler_type cosine --logging_steps 10 --save_steps 1000 --learning_rate 5e-5  --num_train_epochs 100.0 --plot_loss  --fp16 >> train_LLaMA2-7b_WebQSP_Freebase_NQ_lora_epoch100.txt 2>&1 &
 ```
 
 Beam-setting LLMs for Logical Form Generation:
@@ -185,7 +195,7 @@ python run_generator_final.py --data_file_name Reading/LLaMA2-7b/WebQSP_Freebase
 
 - CWQ: 
 
-Train LLMs for Logical Form Generation:
+Train LLMs for Logical Form Generation: (Note that terminal must be quit via `exit`, else process receives SIGHUP due to bug with nohup and DDP. For most streamlined use, use tmux.)
 ```bash
 CUDA_VISIBLE_DEVICES=2 nohup python -u LLMs/LLaMA/src/train_bash.py --stage sft --model_name_or_path meta-llama/Llama-2-13b-hf --do_train  --dataset_dir LLMs/data --dataset CWQ_Freebase_NQ_train --template default  --finetuning_type lora --lora_target q_proj,v_proj --output_dir Reading/LLaMA2-13b/CWQ_Freebase_NQ_lora_epoch10/checkpoint --overwrite_cache --per_device_train_batch_size 4 --gradient_accumulation_steps 4  --lr_scheduler_type cosine --logging_steps 10 --save_steps 1000 --learning_rate 5e-5  --num_train_epochs 10.0 --plot_loss  --fp16 >> train_LLaMA2-13b_CWQ_Freebase_NQ_lora_epoch10.txt 2>&1 &
 ```
