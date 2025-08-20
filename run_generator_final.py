@@ -1,5 +1,6 @@
 import os
 import argparse
+import re
 import json
 from components.utils import dump_json
 
@@ -30,31 +31,52 @@ def run_prediction(args,dataloader,output_dir,output_predictions=True):
     real_total = 0
     for i,pred in enumerate(dataloader):
         predictions = pred['predict']
-        gen_label = pred['label']
+        gold_label = pred['label']
+        
+        # split relation count & logical form
+        pred_split = []
+        for x in predictions:
+            pred_split.append(re.split("{|}", x))
+        gold_split = re.split("{|}", gold_label)
+        
+        # prepare for display
+        pred_display = []
+        for x in pred_split:
+            cur_json = {
+                'relation_cnt': int(x[1]),
+                'logical_form': x[3],
+            }
+            pred_display.append(cur_json)
+        
+        gold_display = {
+            'relation_cnt': int(gold_split[1]),
+            'logical_form': gold_split[3],
+        }
 
         output_list.append({
-            'predictions':predictions,
-            'gen_label':gen_label,
+            'predictions': pred_display,
+            'gen_label': gold_display,
         })
 
-        if predictions[0].lower()==gen_label.lower():
+        # calculate statistics
+        if predictions[0].lower()==gold_label.lower():
             ex_cnt+=1
 
-        if any([x.lower()==gen_label.lower() for x in predictions]):
+        if any([x.lower()==gold_label.lower() for x in predictions]):
             contains_ex_cnt+=1
         
-        if gen_label.lower()!='null':
+        if gold_split[3].lower() != ' null ':
             real_total+=1
 
     
     print(f"""total:{len(output_list)}, 
-                    ex_cnt:{ex_cnt}, 
-                    ex_rate:{ex_cnt/len(output_list)}, 
-                    real_ex_rate:{ex_cnt/real_total}, 
-                    contains_ex_cnt:{contains_ex_cnt}, 
-                    contains_ex_rate:{contains_ex_cnt/len(output_list)}
-                    real_contains_ex_rate:{contains_ex_cnt/real_total}
-                    """)
+          ex_cnt:{ex_cnt}, 
+          ex_rate:{ex_cnt/len(output_list)}, 
+          real_ex_rate:{ex_cnt/real_total}, 
+          contains_ex_cnt:{contains_ex_cnt}, 
+          contains_ex_rate:{contains_ex_cnt/len(output_list)}
+          real_contains_ex_rate:{contains_ex_cnt/real_total}
+          """)
 
         
     if output_predictions:

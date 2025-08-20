@@ -1,7 +1,7 @@
 import os
+import re
 import json
 from components.utils import dump_json
-from executor.logic_form_util import same_logical_form
 
 
 DATA_FILE_PREDICT = "Reading/LLaMA2-7b/WebQSP_Freebase_NQ_lora_epoch100/evaluation_beam/generated_predictions.jsonl"
@@ -60,21 +60,43 @@ def check_structure(dataloader: list):
     mismatch_data = []
 
     for i, pred in enumerate(dataloader):
-        predictions = pred['predict']   # list of S-exp strings
-        gen_label = pred['label']       # S-exp string
-
-        if gen_label.lower() == 'null':
+        predictions = pred['predict']   # list of rel_cnt/S-exp strings
+        gold_label = pred['label']       # rel_cnt/S-exp string
+        
+        # split relation count & logical form
+        pred_list = []
+        for x in predictions:
+            pred_split = re.split("{|}", x)
+            pred_list.append([
+                int(pred_split[1]), 
+                pred_split[3][1:-1]
+            ])
+            
+        gold_split = re.split("{|}", gold_label)
+        gold_list = [int(gold_split[1]), gold_split[3][1:-1]]
+        
+        if gold_list[1].lower() == 'null':
             continue
 
         # remove entity/relation placeholder tokens
-        for predict in predictions:
-            pred_skeleton = remove_entity_relation_placeholders(predict)
-            gold_skeleton = remove_entity_relation_placeholders(gen_label)
+        for pred_rel, pred_lf in pred_list:
+            pred_skeleton = remove_entity_relation_placeholders(pred_lf)
+            gold_skeleton = remove_entity_relation_placeholders(gold_list[1])
             
             if pred_skeleton == gold_skeleton:
-                match_data.append({ 'pred_s': pred_skeleton, 'gold_s': gold_skeleton, })
+                match_data.append({
+                    'pred_r': pred_rel,
+                    'gold_r': gold_list[0],
+                    'pred_s': pred_skeleton, 
+                    'gold_s': gold_skeleton, 
+                })
             else:
-                mismatch_data.append({ 'pred_s': pred_skeleton, 'gold_s': gold_skeleton, })
+                mismatch_data.append({ 
+                    'pred_r': pred_rel,
+                    'gold_r': gold_list[0],
+                    'pred_s': pred_skeleton, 
+                    'gold_s': gold_skeleton, 
+                })
 
             # if not same_logical_form(pred_skeleton, gold_skeleton):
             #     output_data.append({ 'pred_s': pred_skeleton, 'gold_s': gold_skeleton, })
