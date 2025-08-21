@@ -186,4 +186,5 @@ tongji.py
 tongji_webqsp.py
 tongji_cwq.py
 
-test_results/test_log_data_process_rel.json
+# Custom files
+test_results/log*.json

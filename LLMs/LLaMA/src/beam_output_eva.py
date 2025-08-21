@@ -20,10 +20,13 @@ def main():
         # 2. 读取每一行
         for data in tqdm(json_data):
             total_lines += 1
-            query = data['instruction']+data['input']
+            query = data['instruction'] + data['input']
             predict = chat_model.chat_beam(query)
             predict = [p[0] for p in predict]
-            output_data.append({'label':data['output'],'predict':predict})
+            
+            # TODO: add NLQ to generated_predictions.jsonl
+            
+            output_data.append({'input': data['input'], 'label': data['output'], 'predict': predict})
             for p in predict:
                 # 4. 检查"label"和"predict"的值是否相等
                 if data['output'] == p:

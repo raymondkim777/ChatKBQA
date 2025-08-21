@@ -5,7 +5,7 @@ from executor.logic_form_util import get_symbol_type, lisp_to_sparql
 
 
 TEST_LOG_DIR = f'test_results'
-TEST_LOG_NAME = f'test_log_data_process_rel.json'
+TEST_LOG_NAME = f'log_data_process_rel.json'
 TEST_LOG = []
 
 
@@ -22,7 +22,7 @@ def _parse_args():
     """Parse arguments: --dataset, --log"""
     
     parser = argparse.ArgumentParser()
-    parser.add_argument('--dataset', default='WebQSP', help='dataset to perform entity linking, should be CWQ or WebQSP')
+    parser.add_argument('--dataset', default='WebQSP', help='dataset to perform entity linking, should be WebQSP or CWQ')
     parser.add_argument('--log', action='store_true', help='outputs log in test_results/test_log.json')
     return parser.parse_args()
 
@@ -126,7 +126,7 @@ def process_rels(dataset: str, dataset_type: str, log_result: bool = False) -> N
         # retrieve relation count from gold relations
         gold_rel_cnt = len(question['gold_relation_map'])
 
-        # calculate relation count from SPARQL
+        # calculate relation count from S-Expressions
         sexpr_query = question['sexpr']
         rel_set, rel_cnt = parse_sexpr_rels(sexpr_query, log_result)
 

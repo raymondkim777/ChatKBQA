@@ -1,0 +1,2480 @@
+[
+    {
+        "pred_r": 6,
+        "gold_r": 7,
+        "pred_s": "( JOIN ( R rel ) ( TC ( JOIN ( R rel ) ent ) rel 2011 ) )",
+        "gold_s": "( JOIN ( R rel ) ( TC ( AND ( JOIN rel ent ) ( JOIN ( R rel ) ent ) ) rel 2011 ) )"
+    },
+    {
+        "pred_r": 2,
+        "gold_r": 1,
+        "pred_s": "( AND ( JOIN rel ent ) ( JOIN ( R rel ) rel ) )",
+        "gold_s": "( JOIN ( R rel ) rel )"
+    },
+    {
+        "pred_r": 3,
+        "gold_r": 2,
+        "pred_s": "( JOIN ( R rel ) ( ARGMIN ( JOIN ( R rel ) ent ) rel ) )",
+        "gold_s": "( JOIN ( R rel ) ( JOIN ( R rel ) ent ) )"
+    },
+    {
+        "pred_r": 4,
+        "gold_r": 7,
+        "pred_s": "( AND ( JOIN rel ent ) ( JOIN ( R rel ) ( ARGMAX ( JOIN ( R rel ) ent ) rel ) ) )",
+        "gold_s": "( JOIN ( R rel ) ( TC ( AND ( JOIN rel ent ) ( JOIN ( R rel ) ent ) ) rel NOW ) )"
+    },
+    {
+        "pred_r": 4,
+        "gold_r": 7,
+        "pred_s": "( AND ( JOIN rel ent ) ( JOIN ( R rel ) ( ARGMAX ( JOIN ( R rel ) ent ) rel ) ) )",
+        "gold_s": "( JOIN ( R rel ) ( TC ( AND ( JOIN rel ent ) ( JOIN ( R rel ) ent ) ) rel NOW ) )"
+    },
+    {
+        "pred_r": 2,
+        "gold_r": 3,
+        "pred_s": "( JOIN ( R rel ) ( JOIN ( R rel ) ent ) )",
+        "gold_s": "( JOIN ( R rel ) ( ARGMIN ( JOIN ( R rel ) ent ) rel ) )"
+    },
+    {
+        "pred_r": 2,
+        "gold_r": 3,
+        "pred_s": "( JOIN ( R rel ) ( JOIN ( R rel ) ent ) )",
+        "gold_s": "( JOIN ( R rel ) ( ARGMIN ( JOIN ( R rel ) ent ) rel ) )"
+    },
+    {
+        "pred_r": 1,
+        "gold_r": 2,
+        "pred_s": "( JOIN ( R rel ) ent )",
+        "gold_s": "( AND ( JOIN rel \"Firearms\" ) ( JOIN ( R rel ) ent ) )"
+    },
+    {
+        "pred_r": 1,
+        "gold_r": 3,
+        "pred_s": "( JOIN ( R rel ) ent )",
+        "gold_s": "( JOIN ( R rel ) ( ARGMIN ( JOIN ( R rel ) ent ) rel ) )"
+    },
+    {
+        "pred_r": 1,
+        "gold_r": 3,
+        "pred_s": "( JOIN ( R rel ) ent )",
+        "gold_s": "( JOIN ( R rel ) ( ARGMIN ( JOIN ( R rel ) ent ) rel ) )"
+    },
+    {
+        "pred_r": 2,
+        "gold_r": 1,
+        "pred_s": "( AND ( JOIN rel ent ) ( JOIN ( R rel ) ent ) )",
+        "gold_s": "( JOIN ( R rel ) ent )"
+    },
+    {
+        "pred_r": 3,
+        "gold_r": 4,
+        "pred_s": "( JOIN ( R rel ) ( AND ( JOIN rel ent ) ( JOIN ( R rel ) ent ) ) )",
+        "gold_s": "( JOIN ( R rel ) ( AND ( JOIN rel ent ) ( AND ( JOIN rel ent ) ( JOIN ( R rel ) ent ) ) ) )"
+    },
+    {
+        "pred_r": 1,
+        "gold_r": 2,
+        "pred_s": "( JOIN ( R rel ) ent )",
+        "gold_s": "( AND ( JOIN rel ent ) ( JOIN ( R rel ) ent ) )"
+    },
+    {
+        "pred_r": 7,
+        "gold_r": 6,
+        "pred_s": "( JOIN ( R rel ) ( TC ( AND ( JOIN rel ent ) ( JOIN ( R rel ) ent ) ) rel NOW ) )",
+        "gold_s": "( JOIN ( R rel ) ( TC ( JOIN ( R rel ) ent ) rel NOW ) )"
+    },
+    {
+        "pred_r": 7,
+        "gold_r": 6,
+        "pred_s": "( JOIN ( R rel ) ( TC ( AND ( JOIN rel ent ) ( JOIN ( R rel ) ent ) ) rel NOW ) )",
+        "gold_s": "( JOIN ( R rel ) ( TC ( JOIN ( R rel ) ent ) rel NOW ) )"
+    },
+    {
+        "pred_r": 3,
+        "gold_r": 2,
+        "pred_s": "( JOIN ( R rel ) ( AND ( JOIN rel ent ) ( JOIN ( R rel ) ent ) ) )",
+        "gold_s": "( JOIN ( R rel ) ( JOIN ( R rel ) ent ) )"
+    },
+    {
+        "pred_r": 2,
+        "gold_r": 3,
+        "pred_s": "( JOIN ( R rel ) ( JOIN ( R rel ) ent ) )",
+        "gold_s": "( AND ( JOIN rel ent ) ( JOIN ( R rel ) ( JOIN ( R rel ) ent ) ) )"
+    },
+    {
+        "pred_r": 3,
+        "gold_r": 1,
+        "pred_s": "( JOIN ( R rel ) ( AND ( JOIN rel ent ) ( JOIN ( R rel ) ent ) ) )",
+        "gold_s": "( JOIN ( R rel ) ent )"
+    },
+    {
+        "pred_r": 4,
+        "gold_r": 3,
+        "pred_s": "( JOIN ( R rel ) ( AND ( JOIN rel ent ) ( AND ( JOIN rel ent ) ( JOIN ( R rel ) ent ) ) ) )",
+        "gold_s": "( JOIN ( R rel ) ( AND ( JOIN rel ent ) ( JOIN ( R rel ) ent ) ) )"
+    },
+    {
+        "pred_r": 1,
+        "gold_r": 6,
+        "pred_s": "( JOIN ( R rel ) ent )",
+        "gold_s": "( JOIN ( R rel ) ( TC ( JOIN ( R rel ) ent ) rel NOW ) )"
+    },
+    {
+        "pred_r": 1,
+        "gold_r": 6,
+        "pred_s": "( JOIN ( R rel ) ent )",
+        "gold_s": "( JOIN ( R rel ) ( TC ( JOIN ( R rel ) ent ) rel NOW ) )"
+    },
+    {
+        "pred_r": 2,
+        "gold_r": 1,
+        "pred_s": "( AND ( JOIN rel ent ) ( JOIN ( R rel ) ent ) )",
+        "gold_s": "( JOIN ( R rel ) ent )"
+    },
+    {
+        "pred_r": 4,
+        "gold_r": 3,
+        "pred_s": "( JOIN ( R rel ) ( ARGMAX ( AND ( JOIN rel ent ) ( JOIN ( R rel ) ent ) ) rel ) )",
+        "gold_s": "( JOIN ( R rel ) ( AND ( JOIN rel ent ) ( JOIN ( R rel ) ent ) ) )"
+    },
+    {
+        "pred_r": 2,
+        "gold_r": 1,
+        "pred_s": "( JOIN ( R rel ) ( JOIN ( R rel ) ent ) )",
+        "gold_s": "( JOIN ( R rel ) ent )"
+    },
+    {
+        "pred_r": 2,
+        "gold_r": 1,
+        "pred_s": "( JOIN ( R rel ) ( JOIN ( R rel ) ent ) )",
+        "gold_s": "( JOIN ( R rel ) ent )"
+    },
+    {
+        "pred_r": 2,
+        "gold_r": 1,
+        "pred_s": "( JOIN ( R rel ) ( JOIN ( R rel ) ent ) )",
+        "gold_s": "( JOIN ( R rel ) ent )"
+    },
+    {
+        "pred_r": 1,
+        "gold_r": 2,
+        "pred_s": "( JOIN ( R rel ) ent )",
+        "gold_s": "( JOIN ( R rel ) ( JOIN ( R rel ) ent ) )"
+    },
+    {
+        "pred_r": 1,
+        "gold_r": 2,
+        "pred_s": "( JOIN ( R rel ) ent )",
+        "gold_s": "( JOIN ( R rel ) ( JOIN ( R rel ) ent ) )"
+    },
+    {
+        "pred_r": 7,
+        "gold_r": 2,
+        "pred_s": "( JOIN ( R rel ) ( TC ( AND ( JOIN rel ent ) ( JOIN ( R rel ) ent ) ) rel NOW ) )",
+        "gold_s": "( JOIN ( R rel ) ( JOIN ( R rel ) ent ) )"
+    },
+    {
+        "pred_r": 8,
+        "gold_r": 3,
+        "pred_s": "( JOIN ( R rel ) ( TC ( AND ( JOIN rel ent ) ( JOIN ( R rel ) ent ) ) rel NOW ) )",
+        "gold_s": "( JOIN ( R rel ) ( AND ( JOIN rel ent ) ( JOIN ( R rel ) ent ) ) )"
+    },
+    {
+        "pred_r": 4,
+        "gold_r": 3,
+        "pred_s": "( AND ( JOIN rel ent ) ( JOIN ( R rel ) ( ARGMAX ( JOIN ( R rel ) ent ) rel ) ) )",
+        "gold_s": "( JOIN ( R rel ) ( AND ( JOIN rel ent ) ( JOIN ( R rel ) ent ) ) )"
+    },
+    {
+        "pred_r": 2,
+        "gold_r": 3,
+        "pred_s": "( JOIN ( R rel ) ( JOIN ( R rel ) ent ) )",
+        "gold_s": "( AND ( JOIN rel ent ) ( JOIN ( R rel ) ( JOIN ( R rel ) ent ) ) )"
+    },
+    {
+        "pred_r": 7,
+        "gold_r": 6,
+        "pred_s": "( JOIN ( R rel ) ( TC ( AND ( JOIN rel ent ) ( JOIN ( R rel ) ent ) ) rel NOW ) )",
+        "gold_s": "( JOIN ( R rel ) ( TC ( JOIN ( R rel ) ent ) rel NOW ) )"
+    },
+    {
+        "pred_r": 1,
+        "gold_r": 2,
+        "pred_s": "( JOIN ( R rel ) ent )",
+        "gold_s": "( AND ( JOIN rel ent ) ( JOIN ( R rel ) ent ) )"
+    },
+    {
+        "pred_r": 2,
+        "gold_r": 2,
+        "pred_s": "( AND ( JOIN rel ent ) ( JOIN ( R rel ) ent ) )",
+        "gold_s": "( AND ( JOIN rel \"State\" ) ( JOIN ( R rel ) ent ) )"
+    },
+    {
+        "pred_r": 2,
+        "gold_r": 2,
+        "pred_s": "( AND ( JOIN rel ent ) ( JOIN ( R rel ) ent ) )",
+        "gold_s": "( AND ( JOIN rel \"State\" ) ( JOIN ( R rel ) ent ) )"
+    },
+    {
+        "pred_r": 1,
+        "gold_r": 2,
+        "pred_s": "( JOIN ( R rel ) ent )",
+        "gold_s": "( AND ( JOIN rel ent ) ( JOIN ( R rel ) ent ) )"
+    },
+    {
+        "pred_r": 1,
+        "gold_r": 2,
+        "pred_s": "( JOIN ( R rel ) ent )",
+        "gold_s": "( AND ( JOIN rel ent ) ( JOIN ( R rel ) ent ) )"
+    },
+    {
+        "pred_r": 2,
+        "gold_r": 2,
+        "pred_s": "( AND ( JOIN rel ent ) ( JOIN ( R rel ) ent ) )",
+        "gold_s": "( AND ( JOIN rel \"State\" ) ( JOIN ( R rel ) ent ) )"
+    },
+    {
+        "pred_r": 2,
+        "gold_r": 2,
+        "pred_s": "( AND ( JOIN rel ent ) ( JOIN ( R rel ) ent ) )",
+        "gold_s": "( JOIN ( R rel ) ( JOIN ( R rel ) ent ) )"
+    },
+    {
+        "pred_r": 1,
+        "gold_r": 2,
+        "pred_s": "( JOIN ( R rel ) ent )",
+        "gold_s": "( AND ( JOIN rel ent ) ( JOIN ( R rel ) ent ) )"
+    },
+    {
+        "pred_r": 3,
+        "gold_r": 3,
+        "pred_s": "( JOIN ( R rel ) ( AND ( JOIN rel ent ) ( JOIN ( R rel ) ent ) ) )",
+        "gold_s": "( ARGMIN ( JOIN ( R rel ) ( JOIN ( R rel ) ent ) ) rel )"
+    },
+    {
+        "pred_r": 2,
+        "gold_r": 3,
+        "pred_s": "( JOIN ( R rel ) ( JOIN ( R rel ) ent ) )",
+        "gold_s": "( AND ( JOIN rel ent ) ( JOIN ( R rel ) ( JOIN ( R rel ) ent ) ) )"
+    },
+    {
+        "pred_r": 4,
+        "gold_r": 3,
+        "pred_s": "( JOIN ( R rel ) ( AND ( JOIN rel ent ) ( AND ( JOIN rel ent ) ( JOIN ( R rel ) ent ) ) ) )",
+        "gold_s": "( JOIN ( R rel ) ( AND ( JOIN rel ent ) ( JOIN ( R rel ) ent ) ) )"
+    },
+    {
+        "pred_r": 2,
+        "gold_r": 1,
+        "pred_s": "( JOIN ( R rel ) ( JOIN ( R rel ) ent ) )",
+        "gold_s": "( JOIN ( R rel ) ent )"
+    },
+    {
+        "pred_r": 2,
+        "gold_r": 3,
+        "pred_s": "( JOIN ( R rel ) ( JOIN ( R rel ) ent ) )",
+        "gold_s": "( AND ( JOIN rel ent ) ( JOIN ( R rel ) ( JOIN ( R rel ) ent ) ) )"
+    },
+    {
+        "pred_r": 2,
+        "gold_r": 3,
+        "pred_s": "( JOIN ( R rel ) ( JOIN ( R rel ) ent ) )",
+        "gold_s": "( JOIN ( R rel ) ( AND ( JOIN rel ent ) ( JOIN ( R rel ) ent ) ) )"
+    },
+    {
+        "pred_r": 3,
+        "gold_r": 3,
+        "pred_s": "( ARGMIN ( JOIN ( R rel ) ent ) ( JOIN ( R rel ) ent ) )",
+        "gold_s": "( JOIN ( R rel ) ( AND ( JOIN rel ent ) ( JOIN ( R rel ) ent ) ) )"
+    },
+    {
+        "pred_r": 2,
+        "gold_r": 3,
+        "pred_s": "( JOIN ( R rel ) ( JOIN ( R rel ) ent ) )",
+        "gold_s": "( JOIN ( R rel ) ( AND ( JOIN rel ent ) ( JOIN ( R rel ) ent ) ) )"
+    },
+    {
+        "pred_r": 3,
+        "gold_r": 7,
+        "pred_s": "( JOIN ( R rel ) ( AND ( JOIN rel ent ) ( JOIN ( R rel ) ent ) ) )",
+        "gold_s": "( JOIN ( R rel ) ( TC ( AND ( JOIN rel ent ) ( JOIN ( R rel ) ent ) ) rel NOW ) )"
+    },
+    {
+        "pred_r": 1,
+        "gold_r": 2,
+        "pred_s": "( JOIN ( R rel ) ent )",
+        "gold_s": "( AND ( JOIN rel ent ) ( JOIN ( R rel ) ent ) )"
+    },
+    {
+        "pred_r": 2,
+        "gold_r": 6,
+        "pred_s": "( JOIN ( R rel ) ( JOIN ( R rel ) ent ) )",
+        "gold_s": "( JOIN ( R rel ) ( TC ( JOIN ( R rel ) ent ) rel NOW ) )"
+    },
+    {
+        "pred_r": 1,
+        "gold_r": 7,
+        "pred_s": "( JOIN ( R rel ) ent )",
+        "gold_s": "( JOIN ( R rel ) ( TC ( AND ( JOIN rel ent ) ( JOIN ( R rel ) ent ) ) rel NOW ) )"
+    },
+    {
+        "pred_r": 4,
+        "gold_r": 7,
+        "pred_s": "( JOIN ( R rel ) ( ARGMAX ( AND ( JOIN rel ent ) ( JOIN ( R rel ) ent ) ) rel ) )",
+        "gold_s": "( JOIN ( R rel ) ( TC ( AND ( JOIN rel ent ) ( JOIN ( R rel ) ent ) ) rel NOW ) )"
+    },
+    {
+        "pred_r": 2,
+        "gold_r": 1,
+        "pred_s": "( AND ( JOIN rel ent ) ( JOIN ( R rel ) ent ) )",
+        "gold_s": "( JOIN ( R rel ) ent )"
+    },
+    {
+        "pred_r": 1,
+        "gold_r": 2,
+        "pred_s": "( JOIN ( R rel ) ent )",
+        "gold_s": "( JOIN ( R rel ) ( JOIN ( R rel ) ent ) )"
+    },
+    {
+        "pred_r": 1,
+        "gold_r": 2,
+        "pred_s": "( JOIN ( R rel ) ent )",
+        "gold_s": "( AND ( JOIN rel ent ) ( JOIN ( R rel ) ent ) )"
+    },
+    {
+        "pred_r": 2,
+        "gold_r": 6,
+        "pred_s": "( JOIN ( R rel ) ( JOIN ( R rel ) ent ) )",
+        "gold_s": "( JOIN ( R rel ) ( TC ( JOIN ( R rel ) ent ) rel NOW ) )"
+    },
+    {
+        "pred_r": 3,
+        "gold_r": 2,
+        "pred_s": "( JOIN ( R rel ) ( ARGMAX ( JOIN ( R rel ) ent ) rel ) )",
+        "gold_s": "( JOIN ( R rel ) ( JOIN ( R rel ) ent ) )"
+    },
+    {
+        "pred_r": 3,
+        "gold_r": 2,
+        "pred_s": "( JOIN ( R rel ) ( ARGMAX ( JOIN ( R rel ) ent ) rel ) )",
+        "gold_s": "( JOIN ( R rel ) ( JOIN ( R rel ) ent ) )"
+    },
+    {
+        "pred_r": 2,
+        "gold_r": 1,
+        "pred_s": "( JOIN ( R rel ) ( JOIN ( R rel ) ent ) )",
+        "gold_s": "( JOIN ( R rel ) ent )"
+    },
+    {
+        "pred_r": 1,
+        "gold_r": 2,
+        "pred_s": "( JOIN ( R rel ) ent )",
+        "gold_s": "( AND ( JOIN rel ent ) ( JOIN ( R rel ) ent ) )"
+    },
+    {
+        "pred_r": 1,
+        "gold_r": 2,
+        "pred_s": "( JOIN ( R rel ) ent )",
+        "gold_s": "( AND ( JOIN rel ent ) ( JOIN ( R rel ) ent ) )"
+    },
+    {
+        "pred_r": 2,
+        "gold_r": 3,
+        "pred_s": "( ARGMIN ( JOIN ( R rel ) ent ) rel )",
+        "gold_s": "( ARGMIN ( AND ( JOIN rel ent ) ( JOIN ( R rel ) ent ) ) rel )"
+    },
+    {
+        "pred_r": 2,
+        "gold_r": 1,
+        "pred_s": "( AND ( JOIN rel ent ) ( JOIN ( R rel ) ent ) )",
+        "gold_s": "( JOIN ( R rel ) ent )"
+    },
+    {
+        "pred_r": 1,
+        "gold_r": 2,
+        "pred_s": "( JOIN ( R rel ) ent )",
+        "gold_s": "( JOIN ( R rel ) ( JOIN ( R rel ) ent ) )"
+    },
+    {
+        "pred_r": 2,
+        "gold_r": 1,
+        "pred_s": "( JOIN ( R rel ) ( JOIN ( R rel ) ent ) )",
+        "gold_s": "( JOIN ( R rel ) ent )"
+    },
+    {
+        "pred_r": 2,
+        "gold_r": 1,
+        "pred_s": "( AND ( JOIN rel ent ) ( JOIN ( R rel ) ent ) )",
+        "gold_s": "( JOIN ( R rel ) ent )"
+    },
+    {
+        "pred_r": 1,
+        "gold_r": 2,
+        "pred_s": "( JOIN ( R rel ) ent )",
+        "gold_s": "( JOIN ( R rel ) ( JOIN ( R rel ) ent ) )"
+    },
+    {
+        "pred_r": 3,
+        "gold_r": 4,
+        "pred_s": "( JOIN ( R rel ) ( AND ( JOIN rel ent ) ( JOIN ( R rel ) ent ) ) )",
+        "gold_s": "( AND ( JOIN rel ent ) ( JOIN ( R rel ) ( AND ( JOIN rel ent ) ( JOIN ( R rel ) ent ) ) ) )"
+    },
+    {
+        "pred_r": 2,
+        "gold_r": 5,
+        "pred_s": "( JOIN ( R rel ) ( JOIN ( R rel ) ent ) )",
+        "gold_s": "( TC ( JOIN ( R rel ) ent ) rel 1999 )"
+    },
+    {
+        "pred_r": 3,
+        "gold_r": 5,
+        "pred_s": "( AND ( JOIN rel ent ) ( JOIN ( R rel ) ( JOIN ( R rel ) ent ) ) )",
+        "gold_s": "( TC ( JOIN ( R rel ) ent ) rel 1999 )"
+    },
+    {
+        "pred_r": 2,
+        "gold_r": 1,
+        "pred_s": "( AND ( JOIN rel ent ) ( JOIN ( R rel ) ent ) )",
+        "gold_s": "( JOIN ( R rel ) ent )"
+    },
+    {
+        "pred_r": 2,
+        "gold_r": 1,
+        "pred_s": "( AND ( JOIN rel ent ) ( JOIN ( R rel ) ent ) )",
+        "gold_s": "( JOIN ( R rel ) ent )"
+    },
+    {
+        "pred_r": 1,
+        "gold_r": 2,
+        "pred_s": "( JOIN ( R rel ) ent )",
+        "gold_s": "( JOIN ( R rel ) ( JOIN ( R rel ) ent ) )"
+    },
+    {
+        "pred_r": 1,
+        "gold_r": 1,
+        "pred_s": "( JOIN ( R rel ) ent )",
+        "gold_s": "( JOIN ( R rel ) rel )"
+    },
+    {
+        "pred_r": 1,
+        "gold_r": 3,
+        "pred_s": "( JOIN ( R rel ) ent )",
+        "gold_s": "( JOIN ( R rel ) ( AND ( JOIN rel ent ) ( JOIN ( R rel ) ent ) ) )"
+    },
+    {
+        "pred_r": 2,
+        "gold_r": 3,
+        "pred_s": "( JOIN ( R rel ) ( JOIN ( R rel ) ent ) )",
+        "gold_s": "( JOIN ( R rel ) ( AND ( JOIN rel ent ) ( JOIN ( R rel ) ent ) ) )"
+    },
+    {
+        "pred_r": 2,
+        "gold_r": 3,
+        "pred_s": "( AND ( JOIN rel ent ) ( JOIN ( R rel ) ent ) )",
+        "gold_s": "( JOIN ( R rel ) ( AND ( JOIN rel ent ) ( JOIN ( R rel ) ent ) ) )"
+    },
+    {
+        "pred_r": 2,
+        "gold_r": 1,
+        "pred_s": "( AND ( JOIN rel ent ) ( JOIN ( R rel ) ent ) )",
+        "gold_s": "( JOIN ( R rel ) ent )"
+    },
+    {
+        "pred_r": 3,
+        "gold_r": 2,
+        "pred_s": "( AND ( JOIN rel ent ) ( JOIN ( R rel ) ( JOIN ( R rel ) ent ) ) )",
+        "gold_s": "( JOIN ( R rel ) ( JOIN ( R rel ) ent ) )"
+    },
+    {
+        "pred_r": 1,
+        "gold_r": 2,
+        "pred_s": "( JOIN ( R rel ) ent )",
+        "gold_s": "( AND ( JOIN rel ent ) ( JOIN ( R rel ) ent ) )"
+    },
+    {
+        "pred_r": 2,
+        "gold_r": 3,
+        "pred_s": "( JOIN ( R rel ) ( JOIN ( R rel ) ent ) )",
+        "gold_s": "( JOIN ( R rel ) ( AND ( JOIN rel ent ) ( JOIN ( R rel ) ent ) ) )"
+    },
+    {
+        "pred_r": 2,
+        "gold_r": 3,
+        "pred_s": "( JOIN ( R rel ) ( JOIN ( R rel ) ent ) )",
+        "gold_s": "( JOIN ( R rel ) ( AND ( JOIN rel ent ) ( JOIN ( R rel ) ent ) ) )"
+    },
+    {
+        "pred_r": 1,
+        "gold_r": 2,
+        "pred_s": "( JOIN ( R rel ) ent )",
+        "gold_s": "( AND ( JOIN rel ent ) ( JOIN ( R rel ) ent ) )"
+    },
+    {
+        "pred_r": 1,
+        "gold_r": 2,
+        "pred_s": "( JOIN ( R rel ) ent )",
+        "gold_s": "( JOIN ( R rel ) ( JOIN ( R rel ) ent ) )"
+    },
+    {
+        "pred_r": 1,
+        "gold_r": 2,
+        "pred_s": "( JOIN ( R rel ) ent )",
+        "gold_s": "( JOIN ( R rel ) ( JOIN ( R rel ) ent ) )"
+    },
+    {
+        "pred_r": 2,
+        "gold_r": 1,
+        "pred_s": "( ARGMAX ( AND ( JOIN rel ent ) ( JOIN ( R rel ) ent ) ) rel )",
+        "gold_s": "( ARGMAX ( JOIN ( R rel ) ent ) rel )"
+    },
+    {
+        "pred_r": 2,
+        "gold_r": 1,
+        "pred_s": "( AND ( JOIN rel ent ) ( JOIN ( R rel ) ent ) )",
+        "gold_s": "( ARGMAX ( JOIN ( R rel ) ent ) rel )"
+    },
+    {
+        "pred_r": 2,
+        "gold_r": 1,
+        "pred_s": "( AND ( JOIN rel ent ) ( JOIN ( R rel ) ent ) )",
+        "gold_s": "( JOIN ( R rel ) ent )"
+    },
+    {
+        "pred_r": 2,
+        "gold_r": 1,
+        "pred_s": "( AND ( JOIN rel ent ) ( JOIN ( R rel ) ent ) )",
+        "gold_s": "( JOIN ( R rel ) ent )"
+    },
+    {
+        "pred_r": 4,
+        "gold_r": 7,
+        "pred_s": "( AND ( JOIN rel ent ) ( JOIN ( R rel ) ( ARGMAX ( JOIN ( R rel ) ent ) rel ) ) )",
+        "gold_s": "( JOIN ( R rel ) ( TC ( AND ( JOIN rel ent ) ( JOIN ( R rel ) ent ) ) rel NOW ) )"
+    },
+    {
+        "pred_r": 2,
+        "gold_r": 1,
+        "pred_s": "( JOIN ( R rel ) ( JOIN ( R rel ) ent ) )",
+        "gold_s": "( JOIN ( R rel ) ent )"
+    },
+    {
+        "pred_r": 2,
+        "gold_r": 1,
+        "pred_s": "( JOIN ( R rel ) ( JOIN ( R rel ) ent ) )",
+        "gold_s": "( JOIN ( R rel ) ent )"
+    },
+    {
+        "pred_r": 3,
+        "gold_r": 2,
+        "pred_s": "( AND ( JOIN rel ent ) ( JOIN ( R rel ) ( JOIN ( R rel ) ent ) ) )",
+        "gold_s": "( JOIN ( R rel ) ( JOIN ( R rel ) ent ) )"
+    },
+    {
+        "pred_r": 3,
+        "gold_r": 2,
+        "pred_s": "( AND ( JOIN rel ent ) ( JOIN ( R rel ) ( JOIN ( R rel ) ent ) ) )",
+        "gold_s": "( JOIN ( R rel ) ( JOIN ( R rel ) ent ) )"
+    },
+    {
+        "pred_r": 2,
+        "gold_r": 1,
+        "pred_s": "( JOIN ( R rel ) ( JOIN ( R rel ) ent ) )",
+        "gold_s": "( JOIN ( R rel ) ent )"
+    },
+    {
+        "pred_r": 1,
+        "gold_r": 2,
+        "pred_s": "( JOIN ( R rel ) ent )",
+        "gold_s": "( JOIN ( R rel ) ( JOIN ( R rel ) ent ) )"
+    },
+    {
+        "pred_r": 7,
+        "gold_r": 3,
+        "pred_s": "( JOIN ( R rel ) ( TC ( AND ( JOIN rel ent ) ( JOIN ( R rel ) ent ) ) rel NOW ) )",
+        "gold_s": "( JOIN ( R rel ) ( AND ( JOIN rel ent ) ( JOIN ( R rel ) ent ) ) )"
+    },
+    {
+        "pred_r": 2,
+        "gold_r": 3,
+        "pred_s": "( ARGMAX ( JOIN ( R rel ) ent ) rel )",
+        "gold_s": "( ARGMAX ( AND ( JOIN rel ent ) ( JOIN ( R rel ) ent ) ) rel )"
+    },
+    {
+        "pred_r": 1,
+        "gold_r": 2,
+        "pred_s": "( JOIN ( R rel ) ent )",
+        "gold_s": "( JOIN ( R rel ) ( JOIN ( R rel ) ent ) )"
+    },
+    {
+        "pred_r": 1,
+        "gold_r": 2,
+        "pred_s": "( JOIN ( R rel ) ent )",
+        "gold_s": "( AND ( JOIN rel ent ) ( JOIN ( R rel ) ent ) )"
+    },
+    {
+        "pred_r": 6,
+        "gold_r": 2,
+        "pred_s": "( JOIN ( R rel ) ( TC ( JOIN ( R rel ) ent ) rel 2012 ) )",
+        "gold_s": "( JOIN ( R rel ) ( JOIN ( R rel ) ent ) )"
+    },
+    {
+        "pred_r": 3,
+        "gold_r": 3,
+        "pred_s": "( AND ( JOIN rel ent ) ( JOIN ( R rel ) ( JOIN ( R rel ) rel ) ) )",
+        "gold_s": "( AND ( JOIN rel ent ) ( JOIN ( R rel ) ( JOIN ( R rel ) ent ) ) )"
+    },
+    {
+        "pred_r": 2,
+        "gold_r": 1,
+        "pred_s": "( AND ( JOIN rel ent ) ( JOIN ( R rel ) ent ) )",
+        "gold_s": "( JOIN ( R rel ) ent )"
+    },
+    {
+        "pred_r": 2,
+        "gold_r": 1,
+        "pred_s": "( JOIN ( R rel ) ( JOIN ( R rel ) ent ) )",
+        "gold_s": "( JOIN ( R rel ) ent )"
+    },
+    {
+        "pred_r": 2,
+        "gold_r": 3,
+        "pred_s": "( JOIN ( R rel ) ( JOIN ( R rel ) ent ) )",
+        "gold_s": "( JOIN ( R rel ) ( AND ( JOIN rel ent ) ( JOIN ( R rel ) ent ) ) )"
+    },
+    {
+        "pred_r": 1,
+        "gold_r": 2,
+        "pred_s": "( JOIN ( R rel ) ent )",
+        "gold_s": "( JOIN ( R rel ) ( JOIN ( R rel ) ent ) )"
+    },
+    {
+        "pred_r": 1,
+        "gold_r": 2,
+        "pred_s": "( JOIN ( R rel ) ent )",
+        "gold_s": "( JOIN ( R rel ) ( JOIN ( R rel ) ent ) )"
+    },
+    {
+        "pred_r": 3,
+        "gold_r": 1,
+        "pred_s": "( JOIN ( R rel ) ( AND ( JOIN rel ent ) ( JOIN ( R rel ) ent ) ) )",
+        "gold_s": "( JOIN ( R rel ) ent )"
+    },
+    {
+        "pred_r": 2,
+        "gold_r": 3,
+        "pred_s": "( JOIN ( R rel ) ( JOIN ( R rel ) ent ) )",
+        "gold_s": "( JOIN ( R rel ) ( AND ( JOIN rel ent ) ( JOIN ( R rel ) ent ) ) )"
+    },
+    {
+        "pred_r": 1,
+        "gold_r": 2,
+        "pred_s": "( JOIN ( R rel ) rel )",
+        "gold_s": "( JOIN ( R rel ) ( JOIN ( R rel ) rel ) )"
+    },
+    {
+        "pred_r": 2,
+        "gold_r": 1,
+        "pred_s": "( JOIN ( R rel ) ( JOIN ( R rel ) ent ) )",
+        "gold_s": "( JOIN ( R rel ) ent )"
+    },
+    {
+        "pred_r": 1,
+        "gold_r": 3,
+        "pred_s": "( JOIN ( R rel ) ent )",
+        "gold_s": "( JOIN ( R rel ) ( AND ( JOIN rel ent ) ( JOIN ( R rel ) ent ) ) )"
+    },
+    {
+        "pred_r": 1,
+        "gold_r": 3,
+        "pred_s": "( JOIN ( R rel ) ent )",
+        "gold_s": "( JOIN ( R rel ) ( AND ( JOIN rel ent ) ( JOIN ( R rel ) ent ) ) )"
+    },
+    {
+        "pred_r": 2,
+        "gold_r": 1,
+        "pred_s": "( JOIN ( R rel ) ( JOIN ( R rel ) ent ) )",
+        "gold_s": "( JOIN ( R rel ) ent )"
+    },
+    {
+        "pred_r": 2,
+        "gold_r": 1,
+        "pred_s": "( JOIN ( R rel ) ( JOIN ( R rel ) ent ) )",
+        "gold_s": "( JOIN ( R rel ) ent )"
+    },
+    {
+        "pred_r": 2,
+        "gold_r": 1,
+        "pred_s": "( JOIN ( R rel ) ( JOIN ( R rel ) ent ) )",
+        "gold_s": "( JOIN ( R rel ) ent )"
+    },
+    {
+        "pred_r": 7,
+        "gold_r": 3,
+        "pred_s": "( JOIN ( R rel ) ( TC ( AND ( JOIN rel ent ) ( JOIN ( R rel ) ent ) ) rel ) )",
+        "gold_s": "( JOIN ( R rel ) ( AND ( JOIN rel ent ) ( JOIN ( R rel ) ent ) ) )"
+    },
+    {
+        "pred_r": 7,
+        "gold_r": 4,
+        "pred_s": "( JOIN ( R rel ) ( TC ( AND ( JOIN rel ent ) ( JOIN ( R rel ) ent ) ) rel 2012 ) )",
+        "gold_s": "( JOIN ( R rel ) ( ARGMAX ( AND ( JOIN rel ent ) ( JOIN ( R rel ) ent ) ) rel ) )"
+    },
+    {
+        "pred_r": 4,
+        "gold_r": 2,
+        "pred_s": "( ARGMIN ( JOIN ( R rel ) ent ) rel )",
+        "gold_s": "( AND ( JOIN rel ent ) ( JOIN ( R rel ) ent ) )"
+    },
+    {
+        "pred_r": 4,
+        "gold_r": 2,
+        "pred_s": "( ARGMIN ( JOIN ( R rel ) ( JOIN ( R rel ) ent ) ) rel )",
+        "gold_s": "( AND ( JOIN rel ent ) ( JOIN ( R rel ) ent ) )"
+    },
+    {
+        "pred_r": 3,
+        "gold_r": 2,
+        "pred_s": "( JOIN ( R rel ) ( ARGMAX ( JOIN ( R rel ) ent ) rel ) )",
+        "gold_s": "( JOIN ( R rel ) ( JOIN ( R rel ) ent ) )"
+    },
+    {
+        "pred_r": 3,
+        "gold_r": 2,
+        "pred_s": "( JOIN ( R rel ) ( AND ( JOIN rel ent ) ( JOIN ( R rel ) ent ) ) )",
+        "gold_s": "( AND ( JOIN rel ent ) ( JOIN ( R rel ) ent ) )"
+    },
+    {
+        "pred_r": 3,
+        "gold_r": 2,
+        "pred_s": "( JOIN ( R rel ) ( AND ( JOIN rel ent ) ( JOIN ( R rel ) ent ) ) )",
+        "gold_s": "( AND ( JOIN rel ent ) ( JOIN ( R rel ) ent ) )"
+    },
+    {
+        "pred_r": 2,
+        "gold_r": 6,
+        "pred_s": "( JOIN ( R rel ) ( JOIN ( R rel ) ent ) )",
+        "gold_s": "( JOIN ( R rel ) ( TC ( JOIN ( R rel ) ent ) rel NOW ) )"
+    },
+    {
+        "pred_r": 2,
+        "gold_r": 1,
+        "pred_s": "( AND ( JOIN rel ent ) ( JOIN ( R rel ) ent ) )",
+        "gold_s": "( JOIN ( R rel ) ent )"
+    },
+    {
+        "pred_r": 2,
+        "gold_r": 1,
+        "pred_s": "( AND ( JOIN rel ent ) ( JOIN ( R rel ) ent ) )",
+        "gold_s": "( JOIN ( R rel ) ent )"
+    },
+    {
+        "pred_r": 3,
+        "gold_r": 1,
+        "pred_s": "( JOIN ( R rel ) ( AND ( JOIN rel ent ) ( JOIN ( R rel ) ent ) ) )",
+        "gold_s": "( JOIN ( R rel ) ent )"
+    },
+    {
+        "pred_r": 2,
+        "gold_r": 1,
+        "pred_s": "( AND ( JOIN rel ent ) ( JOIN ( R rel ) ent ) )",
+        "gold_s": "( JOIN ( R rel ) ent )"
+    },
+    {
+        "pred_r": 2,
+        "gold_r": 1,
+        "pred_s": "( AND ( JOIN rel ent ) ( JOIN ( R rel ) ent ) )",
+        "gold_s": "( JOIN ( R rel ) ent )"
+    },
+    {
+        "pred_r": 2,
+        "gold_r": 1,
+        "pred_s": "( AND ( JOIN rel ent ) ( JOIN ( R rel ) ent ) )",
+        "gold_s": "( JOIN ( R rel ) ent )"
+    },
+    {
+        "pred_r": 2,
+        "gold_r": 1,
+        "pred_s": "( JOIN ( R rel ) ( JOIN ( R rel ) ent ) )",
+        "gold_s": "( JOIN ( R rel ) ent )"
+    },
+    {
+        "pred_r": 2,
+        "gold_r": 2,
+        "pred_s": "( AND ( JOIN rel ent ) ( JOIN ( R rel ) ent ) )",
+        "gold_s": "( AND ( JOIN rel \"State\" ) ( JOIN ( R rel ) ent ) )"
+    },
+    {
+        "pred_r": 1,
+        "gold_r": 2,
+        "pred_s": "( JOIN ( R rel ) ent )",
+        "gold_s": "( AND ( JOIN rel \"State\" ) ( JOIN ( R rel ) ent ) )"
+    },
+    {
+        "pred_r": 7,
+        "gold_r": 6,
+        "pred_s": "( JOIN ( R rel ) ( TC ( AND ( JOIN rel ent ) ( JOIN ( R rel ) ent ) ) rel 2011 ) )",
+        "gold_s": "( JOIN ( R rel ) ( TC ( JOIN ( R rel ) ent ) rel 2011 ) )"
+    },
+    {
+        "pred_r": 2,
+        "gold_r": 3,
+        "pred_s": "( JOIN ( R rel ) ( JOIN ( R rel ) ent ) )",
+        "gold_s": "( AND ( JOIN rel ent ) ( JOIN ( R rel ) ( JOIN ( R rel ) ent ) ) )"
+    },
+    {
+        "pred_r": 7,
+        "gold_r": 6,
+        "pred_s": "( JOIN ( R rel ) ( TC ( AND ( JOIN rel ent ) ( JOIN ( R rel ) ent ) ) rel 1988 ) )",
+        "gold_s": "( JOIN ( R rel ) ( TC ( JOIN ( R rel ) ent ) rel 1988 ) )"
+    },
+    {
+        "pred_r": 7,
+        "gold_r": 6,
+        "pred_s": "( JOIN ( R rel ) ( TC ( AND ( JOIN rel ent ) ( JOIN ( R rel ) ent ) ) rel 1988 ) )",
+        "gold_s": "( JOIN ( R rel ) ( TC ( JOIN ( R rel ) ent ) rel 1988 ) )"
+    },
+    {
+        "pred_r": 7,
+        "gold_r": 6,
+        "pred_s": "( JOIN ( R rel ) ( TC ( AND ( JOIN rel \"Chief Financial Officer\" ) ( JOIN ( R rel ) ent ) ) rel 2012 ) )",
+        "gold_s": "( JOIN ( R rel ) ( TC ( JOIN ( R rel ) ent ) rel 2012 ) )"
+    },
+    {
+        "pred_r": 2,
+        "gold_r": 6,
+        "pred_s": "( JOIN ( R rel ) ( JOIN ( R rel ) ent ) )",
+        "gold_s": "( JOIN ( R rel ) ( TC ( JOIN ( R rel ) ent ) rel 2012 ) )"
+    },
+    {
+        "pred_r": 2,
+        "gold_r": 1,
+        "pred_s": "( AND ( JOIN rel ent ) ( JOIN ( R rel ) ent ) )",
+        "gold_s": "( JOIN ( R rel ) ent )"
+    },
+    {
+        "pred_r": 2,
+        "gold_r": 1,
+        "pred_s": "( AND ( JOIN rel ent ) ( JOIN ( R rel ) ent ) )",
+        "gold_s": "( JOIN ( R rel ) ent )"
+    },
+    {
+        "pred_r": 7,
+        "gold_r": 6,
+        "pred_s": "( JOIN ( R rel ) ( TC ( AND ( JOIN rel ent ) ( JOIN ( R rel ) ent ) ) rel 2009 ) )",
+        "gold_s": "( JOIN ( R rel ) ( TC ( JOIN ( R rel ) ent ) rel 2009 ) )"
+    },
+    {
+        "pred_r": 2,
+        "gold_r": 3,
+        "pred_s": "( JOIN ( R rel ) ( JOIN ( R rel ) ent ) )",
+        "gold_s": "( JOIN ( R rel ) ( AND ( JOIN rel ent ) ( JOIN ( R rel ) ent ) ) )"
+    },
+    {
+        "pred_r": 1,
+        "gold_r": 2,
+        "pred_s": "( JOIN ( R rel ) ent )",
+        "gold_s": "( JOIN ( R rel ) ( JOIN ( R rel ) ent ) )"
+    },
+    {
+        "pred_r": 2,
+        "gold_r": 3,
+        "pred_s": "( JOIN ( R rel ) ( JOIN ( R rel ) ent ) )",
+        "gold_s": "( JOIN ( R rel ) ( AND ( JOIN rel ent ) ( JOIN ( R rel ) ent ) ) )"
+    },
+    {
+        "pred_r": 3,
+        "gold_r": 4,
+        "pred_s": "( JOIN ( R rel ) ( AND ( JOIN rel ent ) ( JOIN ( R rel ) ent ) ) )",
+        "gold_s": "( JOIN ( R rel ) ( ARGMAX ( AND ( JOIN rel ent ) ( JOIN ( R rel ) ent ) ) rel ) )"
+    },
+    {
+        "pred_r": 6,
+        "gold_r": 2,
+        "pred_s": "( JOIN ( R rel ) ( TC ( JOIN ( R rel ) ent ) rel NOW ) )",
+        "gold_s": "( JOIN ( R rel ) ( JOIN ( R rel ) ent ) )"
+    },
+    {
+        "pred_r": 2,
+        "gold_r": 3,
+        "pred_s": "( JOIN ( R rel ) ( JOIN ( R rel ) ent ) )",
+        "gold_s": "( AND ( JOIN rel ent ) ( JOIN ( R rel ) ( JOIN ( R rel ) ent ) ) )"
+    },
+    {
+        "pred_r": 2,
+        "gold_r": 3,
+        "pred_s": "( JOIN ( R rel ) ( JOIN ( R rel ) ent ) )",
+        "gold_s": "( AND ( JOIN rel ent ) ( JOIN ( R rel ) ( JOIN ( R rel ) ent ) ) )"
+    },
+    {
+        "pred_r": 1,
+        "gold_r": 2,
+        "pred_s": "( JOIN ( R rel ) ent )",
+        "gold_s": "( ARGMAX ( JOIN ( R rel ) ent ) rel )"
+    },
+    {
+        "pred_r": 4,
+        "gold_r": 3,
+        "pred_s": "( JOIN ( R rel ) ( AND ( JOIN rel ent ) ( AND ( JOIN rel ent ) ( JOIN ( R rel ) ent ) ) ) )",
+        "gold_s": "( JOIN ( R rel ) ( AND ( JOIN rel ent ) ( JOIN ( R rel ) ent ) ) )"
+    },
+    {
+        "pred_r": 3,
+        "gold_r": 3,
+        "pred_s": "( AND ( JOIN rel ent ) ( JOIN ( R rel ) ( JOIN ( R rel ) ent ) ) )",
+        "gold_s": "( AND ( JOIN rel \"State\" ) ( JOIN ( R rel ) ( JOIN ( R rel ) ent ) ) )"
+    },
+    {
+        "pred_r": 2,
+        "gold_r": 3,
+        "pred_s": "( JOIN ( R rel ) ( JOIN ( R rel ) ent ) )",
+        "gold_s": "( JOIN ( R rel ) ( ARGMAX ( JOIN ( R rel ) ent ) rel ) )"
+    },
+    {
+        "pred_r": 2,
+        "gold_r": 3,
+        "pred_s": "( AND ( JOIN rel ent ) ( JOIN ( R rel ) ent ) )",
+        "gold_s": "( JOIN ( R rel ) ( ARGMAX ( JOIN ( R rel ) ent ) rel ) )"
+    },
+    {
+        "pred_r": 1,
+        "gold_r": 2,
+        "pred_s": "( JOIN ( R rel ) ent )",
+        "gold_s": "( JOIN ( R rel ) ( JOIN ( R rel ) ent ) )"
+    },
+    {
+        "pred_r": 1,
+        "gold_r": 2,
+        "pred_s": "( JOIN ( R rel ) ent )",
+        "gold_s": "( JOIN ( R rel ) ( JOIN ( R rel ) ent ) )"
+    },
+    {
+        "pred_r": 2,
+        "gold_r": 2,
+        "pred_s": "( JOIN ( R rel ) ( JOIN ( R rel ) rel ) )",
+        "gold_s": "( JOIN ( R rel ) ( JOIN ( R rel ) ent ) )"
+    },
+    {
+        "pred_r": 3,
+        "gold_r": 2,
+        "pred_s": "( AND ( JOIN rel ent ) ( JOIN ( R rel ) ( JOIN ( R rel ) ent ) ) )",
+        "gold_s": "( JOIN ( R rel ) ( JOIN ( R rel ) ent ) )"
+    },
+    {
+        "pred_r": 3,
+        "gold_r": 2,
+        "pred_s": "( AND ( JOIN rel ent ) ( JOIN ( R rel ) ( JOIN ( R rel ) ent ) ) )",
+        "gold_s": "( JOIN ( R rel ) ( JOIN ( R rel ) ent ) )"
+    },
+    {
+        "pred_r": 2,
+        "gold_r": 6,
+        "pred_s": "( JOIN ( R rel ) ( JOIN ( R rel ) ent ) )",
+        "gold_s": "( JOIN ( R rel ) ( TC ( JOIN ( R rel ) ent ) rel NOW ) )"
+    },
+    {
+        "pred_r": 3,
+        "gold_r": 2,
+        "pred_s": "( ARGMAX ( AND ( JOIN rel ent ) ( JOIN ( R rel ) ent ) ) rel )",
+        "gold_s": "( ARGMAX ( JOIN ( R rel ) ent ) rel )"
+    },
+    {
+        "pred_r": 1,
+        "gold_r": 2,
+        "pred_s": "( JOIN ( R rel ) ent )",
+        "gold_s": "( AND ( JOIN rel ent ) ( JOIN ( R rel ) ent ) )"
+    },
+    {
+        "pred_r": 2,
+        "gold_r": 6,
+        "pred_s": "( JOIN ( R rel ) ( JOIN ( R rel ) ent ) )",
+        "gold_s": "( JOIN ( R rel ) ( TC ( JOIN ( R rel ) ent ) rel NOW ) )"
+    },
+    {
+        "pred_r": 3,
+        "gold_r": 6,
+        "pred_s": "( JOIN ( R rel ) ( AND ( JOIN rel ent ) ( JOIN ( R rel ) ent ) ) )",
+        "gold_s": "( JOIN ( R rel ) ( TC ( JOIN ( R rel ) ent ) rel NOW ) )"
+    },
+    {
+        "pred_r": 2,
+        "gold_r": 1,
+        "pred_s": "( JOIN ( R rel ) ( JOIN ( R rel ) ent ) )",
+        "gold_s": "( JOIN ( R rel ) ent )"
+    },
+    {
+        "pred_r": 2,
+        "gold_r": 1,
+        "pred_s": "( JOIN ( R rel ) ( JOIN ( R rel ) ent ) )",
+        "gold_s": "( JOIN ( R rel ) ent )"
+    },
+    {
+        "pred_r": 2,
+        "gold_r": 1,
+        "pred_s": "( AND ( JOIN rel ent ) ( JOIN ( R rel ) ent ) )",
+        "gold_s": "( JOIN ( R rel ) ent )"
+    },
+    {
+        "pred_r": 6,
+        "gold_r": 1,
+        "pred_s": "( JOIN ( R rel ) ( TC ( JOIN ( R rel ) ent ) rel 2013 ) )",
+        "gold_s": "( JOIN ( R rel ) ent )"
+    },
+    {
+        "pred_r": 6,
+        "gold_r": 7,
+        "pred_s": "( JOIN ( R rel ) ( TC ( JOIN ( R rel ) ent ) rel NOW ) )",
+        "gold_s": "( JOIN ( R rel ) ( TC ( AND ( JOIN rel ent ) ( JOIN ( R rel ) ent ) ) rel NOW ) )"
+    },
+    {
+        "pred_r": 3,
+        "gold_r": 3,
+        "pred_s": "( JOIN ( R rel ) ( AND ( JOIN rel ent ) ( JOIN ( R rel ) ent ) ) )",
+        "gold_s": "( JOIN ( R rel ) ( ARGMAX ( JOIN ( R rel ) ent ) rel ) )"
+    },
+    {
+        "pred_r": 3,
+        "gold_r": 4,
+        "pred_s": "( JOIN ( R rel ) ( AND ( JOIN rel ent ) ( JOIN ( R rel ) ent ) ) )",
+        "gold_s": "( JOIN ( R rel ) ( AND ( JOIN rel ent ) ( AND ( JOIN rel ent ) ( JOIN ( R rel ) ent ) ) ) )"
+    },
+    {
+        "pred_r": 3,
+        "gold_r": 3,
+        "pred_s": "( AND ( JOIN rel ent ) ( JOIN ( R rel ) ( JOIN ( R rel ) ent ) ) )",
+        "gold_s": "( JOIN ( R rel ) ( AND ( JOIN rel ent ) ( JOIN ( R rel ) ent ) ) )"
+    },
+    {
+        "pred_r": 2,
+        "gold_r": 1,
+        "pred_s": "( JOIN ( R rel ) ( JOIN ( R rel ) ent ) )",
+        "gold_s": "( JOIN ( R rel ) ent )"
+    },
+    {
+        "pred_r": 1,
+        "gold_r": 3,
+        "pred_s": "( JOIN ( R rel ) ent )",
+        "gold_s": "( JOIN ( R rel ) ( AND ( JOIN rel ent ) ( JOIN ( R rel ) ent ) ) )"
+    },
+    {
+        "pred_r": 1,
+        "gold_r": 3,
+        "pred_s": "( JOIN ( R rel ) ent )",
+        "gold_s": "( JOIN ( R rel ) ( AND ( JOIN rel ent ) ( JOIN ( R rel ) ent ) ) )"
+    },
+    {
+        "pred_r": 6,
+        "gold_r": 7,
+        "pred_s": "( JOIN ( R rel ) ( TC ( JOIN ( R rel ) ent ) rel NOW ) )",
+        "gold_s": "( JOIN ( R rel ) ( TC ( AND ( JOIN rel \"22\" ) ( JOIN ( R rel ) ent ) ) rel NOW ) )"
+    },
+    {
+        "pred_r": 3,
+        "gold_r": 3,
+        "pred_s": "( AND ( JOIN rel ent ) ( JOIN ( R rel ) ( JOIN ( R rel ) ent ) ) )",
+        "gold_s": "( AND ( JOIN rel \"Country\" ) ( JOIN ( R rel ) ( JOIN ( R rel ) ent ) ) )"
+    },
+    {
+        "pred_r": 2,
+        "gold_r": 3,
+        "pred_s": "( JOIN ( R rel ) ( JOIN ( R rel ) ent ) )",
+        "gold_s": "( AND ( JOIN rel ent ) ( JOIN ( R rel ) ( JOIN ( R rel ) ent ) ) )"
+    },
+    {
+        "pred_r": 3,
+        "gold_r": 2,
+        "pred_s": "( JOIN ( R rel ) ( AND ( JOIN rel ent ) ( JOIN ( R rel ) ent ) ) )",
+        "gold_s": "( JOIN ( R rel ) ( JOIN ( R rel ) ent ) )"
+    },
+    {
+        "pred_r": 1,
+        "gold_r": 2,
+        "pred_s": "( JOIN ( R rel ) ent )",
+        "gold_s": "( ARGMIN ( JOIN ( R rel ) ent ) rel )"
+    },
+    {
+        "pred_r": 2,
+        "gold_r": 2,
+        "pred_s": "( AND ( JOIN rel ent ) ( JOIN ( R rel ) ent ) )",
+        "gold_s": "( JOIN ( R rel ) ( JOIN ( R rel ) ent ) )"
+    },
+    {
+        "pred_r": 2,
+        "gold_r": 2,
+        "pred_s": "( ARGMIN ( JOIN ( R rel ) ent ) rel ]",
+        "gold_s": "( ARGMIN ( JOIN ( R rel ) ent ) rel )"
+    },
+    {
+        "pred_r": 7,
+        "gold_r": 6,
+        "pred_s": "( JOIN ( R rel ) ( TC ( AND ( JOIN rel ent ) ( JOIN ( R rel ) ent ) ) rel 2008 ) )",
+        "gold_s": "( JOIN ( R rel ) ( TC ( JOIN ( R rel ) ent ) rel 2008 ) )"
+    },
+    {
+        "pred_r": 7,
+        "gold_r": 8,
+        "pred_s": "( JOIN ( R rel ) ( TC ( AND ( JOIN rel ent ) ( JOIN ( R rel ) ent ) ) rel NOW ) )",
+        "gold_s": "( AND ( JOIN rel ent ) ( JOIN ( R rel ) ( TC ( AND ( JOIN rel ent ) ( JOIN ( R rel ) ent ) ) rel NOW ) ) )"
+    },
+    {
+        "pred_r": 7,
+        "gold_r": 8,
+        "pred_s": "( JOIN ( R rel ) ( TC ( AND ( JOIN rel ent ) ( JOIN ( R rel ) ent ) ) rel ) )",
+        "gold_s": "( AND ( JOIN rel ent ) ( JOIN ( R rel ) ( TC ( AND ( JOIN rel ent ) ( JOIN ( R rel ) ent ) ) rel NOW ) ) )"
+    },
+    {
+        "pred_r": 1,
+        "gold_r": 2,
+        "pred_s": "( JOIN ( R rel ) ent )",
+        "gold_s": "( AND ( JOIN rel ent ) ( JOIN ( R rel ) ent ) )"
+    },
+    {
+        "pred_r": 1,
+        "gold_r": 4,
+        "pred_s": "( JOIN ( R rel ) ent )",
+        "gold_s": "( AND ( JOIN rel ent ) ( JOIN ( R rel ) ( AND ( JOIN rel ent ) ( JOIN ( R rel ) ent ) ) ) )"
+    },
+    {
+        "pred_r": 1,
+        "gold_r": 2,
+        "pred_s": "( JOIN ( R rel ) ent )",
+        "gold_s": "( JOIN ( R rel ) ( JOIN ( R rel ) ent ) )"
+    },
+    {
+        "pred_r": 1,
+        "gold_r": 2,
+        "pred_s": "( JOIN ( R rel ) ent )",
+        "gold_s": "( AND ( JOIN rel ent ) ( JOIN ( R rel ) ent ) )"
+    },
+    {
+        "pred_r": 1,
+        "gold_r": 2,
+        "pred_s": "( JOIN ( R rel ) ent )",
+        "gold_s": "( AND ( JOIN rel ent ) ( JOIN ( R rel ) ent ) )"
+    },
+    {
+        "pred_r": 1,
+        "gold_r": 2,
+        "pred_s": "( JOIN ( R rel ) ent )",
+        "gold_s": "( JOIN ( R rel ) ( JOIN ( R rel ) ent ) )"
+    },
+    {
+        "pred_r": 2,
+        "gold_r": 1,
+        "pred_s": "( JOIN ( R rel ) ( JOIN ( R rel ) ent ) )",
+        "gold_s": "( JOIN ( R rel ) ent )"
+    },
+    {
+        "pred_r": 2,
+        "gold_r": 1,
+        "pred_s": "( JOIN ( R rel ) ( JOIN ( R rel ) ent ) )",
+        "gold_s": "( JOIN ( R rel ) ent )"
+    },
+    {
+        "pred_r": 2,
+        "gold_r": 2,
+        "pred_s": "( AND ( JOIN rel ent ) ( JOIN ( R rel ) ent ) )",
+        "gold_s": "( AND ( JOIN rel \"Country\" ) ( JOIN ( R rel ) ent ) )"
+    },
+    {
+        "pred_r": 3,
+        "gold_r": 2,
+        "pred_s": "( JOIN ( R rel ) ( AND ( JOIN rel ent ) ( JOIN ( R rel ) ent ) ) )",
+        "gold_s": "( JOIN ( R rel ) ( JOIN ( R rel ) ent ) )"
+    },
+    {
+        "pred_r": 7,
+        "gold_r": 6,
+        "pred_s": "( JOIN ( R rel ) ( TC ( AND ( JOIN rel ent ) ( JOIN ( R rel ) ent ) ) rel 1999 ) )",
+        "gold_s": "( JOIN ( R rel ) ( TC ( JOIN ( R rel ) ent ) rel 1999 ) )"
+    },
+    {
+        "pred_r": 2,
+        "gold_r": 2,
+        "pred_s": "( AND ( JOIN rel ent ) ( JOIN ( R rel ) ent ) )",
+        "gold_s": "( JOIN ( R rel ) ( JOIN ( R rel ) ent ) )"
+    },
+    {
+        "pred_r": 2,
+        "gold_r": 3,
+        "pred_s": "( JOIN ( R rel ) ( JOIN ( R rel ) ent ) )",
+        "gold_s": "( AND ( JOIN rel ent ) ( JOIN ( R rel ) ( JOIN ( R rel ) ent ) ) )"
+    },
+    {
+        "pred_r": 1,
+        "gold_r": 2,
+        "pred_s": "( JOIN ( R rel ) ent )",
+        "gold_s": "( ARGMAX ( JOIN ( R rel ) ent ) rel )"
+    },
+    {
+        "pred_r": 7,
+        "gold_r": 1,
+        "pred_s": "( JOIN ( R rel ) ( TC ( AND ( JOIN rel ent ) ( JOIN ( R rel ) ent ) ) rel NOW ) )",
+        "gold_s": "( JOIN ( R rel ) ent )"
+    },
+    {
+        "pred_r": 2,
+        "gold_r": 1,
+        "pred_s": "( JOIN ( R rel ) ( JOIN ( R rel ) ent ) )",
+        "gold_s": "( JOIN ( R rel ) ent )"
+    },
+    {
+        "pred_r": 2,
+        "gold_r": 3,
+        "pred_s": "( JOIN ( R rel ) ( JOIN ( R rel ) ent ) )",
+        "gold_s": "( JOIN ( R rel ) ( AND ( JOIN rel ent ) ( JOIN ( R rel ) ent ) ) )"
+    },
+    {
+        "pred_r": 2,
+        "gold_r": 1,
+        "pred_s": "( JOIN ( R rel ) ( JOIN ( R rel ) ent ) )",
+        "gold_s": "( JOIN ( R rel ) ent )"
+    },
+    {
+        "pred_r": 2,
+        "gold_r": 1,
+        "pred_s": "( JOIN ( R rel ) ( JOIN ( R rel ) ent ) )",
+        "gold_s": "( JOIN ( R rel ) ent )"
+    },
+    {
+        "pred_r": 4,
+        "gold_r": 3,
+        "pred_s": "( JOIN ( R rel ) ( AND ( JOIN rel ent ) ( AND ( JOIN rel ent ) ( JOIN ( R rel ) ent ) ) ) )",
+        "gold_s": "( JOIN ( R rel ) ( AND ( JOIN rel ent ) ( JOIN ( R rel ) ent ) ) )"
+    },
+    {
+        "pred_r": 2,
+        "gold_r": 1,
+        "pred_s": "( AND ( JOIN rel ent ) ( JOIN ( R rel ) ent ) )",
+        "gold_s": "( JOIN ( R rel ) ent )"
+    },
+    {
+        "pred_r": 7,
+        "gold_r": 1,
+        "pred_s": "( AND ( JOIN rel ent ) ( JOIN ( R rel ) ent ) ( JOIN ( R rel ) ent ) )",
+        "gold_s": "( JOIN ( R rel ) ent )"
+    },
+    {
+        "pred_r": 6,
+        "gold_r": 2,
+        "pred_s": "( JOIN ( R rel ) ( TC ( JOIN ( R rel ) ent ) rel NOW ) )",
+        "gold_s": "( JOIN ( R rel ) ( JOIN ( R rel ) ent ) )"
+    },
+    {
+        "pred_r": 1,
+        "gold_r": 2,
+        "pred_s": "( JOIN ( R rel ) ent )",
+        "gold_s": "( AND ( JOIN rel ent ) ( JOIN ( R rel ) ent ) )"
+    },
+    {
+        "pred_r": 1,
+        "gold_r": 2,
+        "pred_s": "( JOIN ( R rel ) ent )",
+        "gold_s": "( AND ( JOIN rel ent ) ( JOIN ( R rel ) ent ) )"
+    },
+    {
+        "pred_r": 1,
+        "gold_r": 2,
+        "pred_s": "( JOIN ( R rel ) ent )",
+        "gold_s": "( JOIN ( R rel ) ( JOIN ( R rel ) ent ) )"
+    },
+    {
+        "pred_r": 3,
+        "gold_r": 4,
+        "pred_s": "( JOIN ( R rel ) ( AND ( JOIN rel ent ) ( JOIN ( R rel ) ent ) ) )",
+        "gold_s": "( JOIN ( R rel ) ( ARGMIN ( AND ( JOIN rel ent ) ( JOIN ( R rel ) ent ) ) rel ) )"
+    },
+    {
+        "pred_r": 3,
+        "gold_r": 2,
+        "pred_s": "( JOIN ( R rel ) ( AND ( JOIN rel ent ) ( JOIN ( R rel ) ent ) ) )",
+        "gold_s": "( JOIN ( R rel ) ( JOIN ( R rel ) ent ) )"
+    },
+    {
+        "pred_r": 3,
+        "gold_r": 2,
+        "pred_s": "( JOIN ( R rel ) ( AND ( JOIN rel ent ) ( JOIN ( R rel ) ent ) ) )",
+        "gold_s": "( JOIN ( R rel ) ( JOIN ( R rel ) ent ) )"
+    },
+    {
+        "pred_r": 6,
+        "gold_r": 3,
+        "pred_s": "( JOIN ( R rel ) ( TC ( JOIN ( R rel ) ent ) rel NOW ) )",
+        "gold_s": "( AND ( JOIN rel ent ) ( JOIN ( R rel ) ( JOIN ( R rel ) ent ) ) )"
+    },
+    {
+        "pred_r": 3,
+        "gold_r": 2,
+        "pred_s": "( AND ( JOIN rel ent ) ( JOIN ( R rel ) ( JOIN ( R rel ) ent ) ) )",
+        "gold_s": "( JOIN ( R rel ) ( JOIN ( R rel ) ent ) )"
+    },
+    {
+        "pred_r": 1,
+        "gold_r": 3,
+        "pred_s": "( JOIN ( R rel ) ent )",
+        "gold_s": "( AND ( JOIN rel ent ) ( JOIN ( R rel ) ( JOIN ( R rel ) ent ) ) )"
+    },
+    {
+        "pred_r": 1,
+        "gold_r": 3,
+        "pred_s": "( JOIN ( R rel ) ent )",
+        "gold_s": "( AND ( JOIN rel ent ) ( JOIN ( R rel ) ( JOIN ( R rel ) ent ) ) )"
+    },
+    {
+        "pred_r": 1,
+        "gold_r": 3,
+        "pred_s": "( JOIN ( R rel ) ent )",
+        "gold_s": "( JOIN ( R rel ) ( AND ( JOIN rel ent ) ( JOIN ( R rel ) ent ) ) )"
+    },
+    {
+        "pred_r": 2,
+        "gold_r": 1,
+        "pred_s": "( JOIN ( R rel ) ( JOIN ( R rel ) ent ) )",
+        "gold_s": "( JOIN ( R rel ) ent )"
+    },
+    {
+        "pred_r": 2,
+        "gold_r": 1,
+        "pred_s": "( JOIN ( R rel ) ( JOIN ( R rel ) ent ) )",
+        "gold_s": "( JOIN ( R rel ) ent )"
+    },
+    {
+        "pred_r": 2,
+        "gold_r": 1,
+        "pred_s": "( JOIN ( R rel ) ( JOIN ( R rel ) ent ) )",
+        "gold_s": "( JOIN ( R rel ) ent )"
+    },
+    {
+        "pred_r": 4,
+        "gold_r": 3,
+        "pred_s": "( JOIN ( R rel ) ( ARGMIN ( AND ( JOIN rel ent ) ( JOIN ( R rel ) ent ) ) rel ) )",
+        "gold_s": "( JOIN ( R rel ) ( ARGMIN ( JOIN ( R rel ) ent ) rel ) )"
+    },
+    {
+        "pred_r": 2,
+        "gold_r": 1,
+        "pred_s": "( AND ( JOIN rel ent ) ( JOIN ( R rel ) ent ) )",
+        "gold_s": "( JOIN ( R rel ) ent )"
+    },
+    {
+        "pred_r": 2,
+        "gold_r": 1,
+        "pred_s": "( AND ( JOIN rel ent ) ( JOIN ( R rel ) ent ) )",
+        "gold_s": "( JOIN ( R rel ) ent )"
+    },
+    {
+        "pred_r": 4,
+        "gold_r": 3,
+        "pred_s": "( JOIN ( R rel ) ( AND ( JOIN rel ent ) ( AND ( JOIN rel ent ) ( JOIN ( R rel ) ent ) ) ) )",
+        "gold_s": "( JOIN ( R rel ) ( AND ( JOIN rel ent ) ( JOIN ( R rel ) ent ) ) )"
+    },
+    {
+        "pred_r": 2,
+        "gold_r": 1,
+        "pred_s": "( JOIN ( R rel ) ( JOIN ( R rel ) ent ) )",
+        "gold_s": "( JOIN ( R rel ) ent )"
+    },
+    {
+        "pred_r": 2,
+        "gold_r": 1,
+        "pred_s": "( JOIN ( R rel ) ( JOIN ( R rel ) ent ) )",
+        "gold_s": "( JOIN ( R rel ) ent )"
+    },
+    {
+        "pred_r": 3,
+        "gold_r": 4,
+        "pred_s": "( JOIN ( R rel ) ( AND ( JOIN rel ent ) ( JOIN ( R rel ) ent ) ) )",
+        "gold_s": "( ARGMIN ( JOIN ( R rel ) ( AND ( JOIN rel ent ) ( JOIN ( R rel ) ent ) ) ) rel )"
+    },
+    {
+        "pred_r": 1,
+        "gold_r": 2,
+        "pred_s": "( JOIN ( R rel ) ent )",
+        "gold_s": "( JOIN ( R rel ) ( JOIN ( R rel ) ent ) )"
+    },
+    {
+        "pred_r": 1,
+        "gold_r": 2,
+        "pred_s": "( JOIN ( R rel ) ent )",
+        "gold_s": "( JOIN ( R rel ) ( JOIN ( R rel ) ent ) )"
+    },
+    {
+        "pred_r": 3,
+        "gold_r": 2,
+        "pred_s": "( JOIN ( R rel ) ( AND ( JOIN rel ent ) ( JOIN ( R rel ) ent ) ) )",
+        "gold_s": "( JOIN ( R rel ) ( JOIN ( R rel ) ent ) )"
+    },
+    {
+        "pred_r": 2,
+        "gold_r": 3,
+        "pred_s": "( JOIN ( R rel ) ( JOIN ( R rel ) ent ) )",
+        "gold_s": "( JOIN ( R rel ) ( AND ( JOIN rel ent ) ( JOIN ( R rel ) ent ) ) )"
+    },
+    {
+        "pred_r": 2,
+        "gold_r": 1,
+        "pred_s": "( JOIN ( R rel ) ( JOIN ( R rel ) ent ) )",
+        "gold_s": "( JOIN ( R rel ) ent )"
+    },
+    {
+        "pred_r": 2,
+        "gold_r": 1,
+        "pred_s": "( AND ( JOIN rel \"Country\" ) ( JOIN ( R rel ) ent ) )",
+        "gold_s": "( JOIN ( R rel ) ent )"
+    },
+    {
+        "pred_r": 1,
+        "gold_r": 2,
+        "pred_s": "( JOIN ( R rel ) ent )",
+        "gold_s": "( AND ( JOIN rel ent ) ( JOIN ( R rel ) ent ) )"
+    },
+    {
+        "pred_r": 1,
+        "gold_r": 2,
+        "pred_s": "( JOIN ( R rel ) ent )",
+        "gold_s": "( AND ( JOIN rel ent ) ( JOIN ( R rel ) ent ) )"
+    },
+    {
+        "pred_r": 2,
+        "gold_r": 1,
+        "pred_s": "( AND ( JOIN rel ent ) ( JOIN ( R rel ) ent ) )",
+        "gold_s": "( JOIN ( R rel ) ent )"
+    },
+    {
+        "pred_r": 1,
+        "gold_r": 2,
+        "pred_s": "( JOIN ( R rel ) ent )",
+        "gold_s": "( AND ( JOIN rel ent ) ( JOIN ( R rel ) ent ) )"
+    },
+    {
+        "pred_r": 1,
+        "gold_r": 2,
+        "pred_s": "( JOIN ( R rel ) ent )",
+        "gold_s": "( AND ( JOIN rel ent ) ( JOIN ( R rel ) ent ) )"
+    },
+    {
+        "pred_r": 3,
+        "gold_r": 1,
+        "pred_s": "( AND ( JOIN rel ent ) ( JOIN ( R rel ) ( JOIN ( R rel ) rel ) ) )",
+        "gold_s": "( JOIN ( R rel ) rel )"
+    },
+    {
+        "pred_r": 3,
+        "gold_r": 1,
+        "pred_s": "( AND ( JOIN rel ent ) ( JOIN ( R rel ) ( JOIN ( R rel ) rel ) ) )",
+        "gold_s": "( JOIN ( R rel ) rel )"
+    },
+    {
+        "pred_r": 2,
+        "gold_r": 1,
+        "pred_s": "( AND ( JOIN rel ent ) ( JOIN ( R rel ) ent ) )",
+        "gold_s": "( JOIN ( R rel ) ent )"
+    },
+    {
+        "pred_r": 2,
+        "gold_r": 1,
+        "pred_s": "( AND ( JOIN rel ent ) ( JOIN ( R rel ) ent ) )",
+        "gold_s": "( JOIN ( R rel ) ent )"
+    },
+    {
+        "pred_r": 2,
+        "gold_r": 2,
+        "pred_s": "( AND ( JOIN rel ent ) ( JOIN ( R rel ) ent ) )",
+        "gold_s": "( ARGMIN ( JOIN ( R rel ) ent ) rel )"
+    },
+    {
+        "pred_r": 2,
+        "gold_r": 2,
+        "pred_s": "( AND ( JOIN rel ent ) ( JOIN ( R rel ) ent ) )",
+        "gold_s": "( ARGMIN ( JOIN ( R rel ) ent ) rel )"
+    },
+    {
+        "pred_r": 2,
+        "gold_r": 1,
+        "pred_s": "( JOIN ( R rel ) ( JOIN ( R rel ) ent ) )",
+        "gold_s": "( JOIN ( R rel ) ent )"
+    },
+    {
+        "pred_r": 2,
+        "gold_r": 1,
+        "pred_s": "( AND ( JOIN rel ent ) ( JOIN ( R rel ) ent ) )",
+        "gold_s": "( JOIN ( R rel ) ent )"
+    },
+    {
+        "pred_r": 2,
+        "gold_r": 1,
+        "pred_s": "( JOIN ( R rel ) ( JOIN ( R rel ) ent ) )",
+        "gold_s": "( JOIN ( R rel ) ent )"
+    },
+    {
+        "pred_r": 2,
+        "gold_r": 1,
+        "pred_s": "( JOIN ( R rel ) ( JOIN ( R rel ) ent ) )",
+        "gold_s": "( JOIN ( R rel ) ent )"
+    },
+    {
+        "pred_r": 2,
+        "gold_r": 1,
+        "pred_s": "( AND ( JOIN rel ent ) ( JOIN ( R rel ) ent ) )",
+        "gold_s": "( JOIN ( R rel ) ent )"
+    },
+    {
+        "pred_r": 2,
+        "gold_r": 1,
+        "pred_s": "( AND ( JOIN rel ent ) ( JOIN ( R rel ) ent ) )",
+        "gold_s": "( JOIN ( R rel ) ent )"
+    },
+    {
+        "pred_r": 3,
+        "gold_r": 2,
+        "pred_s": "( JOIN ( R rel ) ( AND ( JOIN rel ent ) ( JOIN ( R rel ) ent ) ) )",
+        "gold_s": "( JOIN ( R rel ) ( JOIN ( R rel ) ent ) )"
+    },
+    {
+        "pred_r": 3,
+        "gold_r": 2,
+        "pred_s": "( JOIN ( R rel ) ( AND ( JOIN rel ent ) ( JOIN ( R rel ) ent ) ) )",
+        "gold_s": "( JOIN ( R rel ) ( JOIN ( R rel ) ent ) )"
+    },
+    {
+        "pred_r": 2,
+        "gold_r": 2,
+        "pred_s": "( AND ( JOIN rel ent ) ( JOIN ( R rel ) ent ) )",
+        "gold_s": "( ARGMAX ( AND ( JOIN rel \"City\" ) ( JOIN ( R rel ) ent ) ) rel )"
+    },
+    {
+        "pred_r": 2,
+        "gold_r": 2,
+        "pred_s": "( ARGMAX ( AND ( JOIN rel ent ) ( JOIN ( R rel ) ent ) ) rel )",
+        "gold_s": "( ARGMAX ( AND ( JOIN rel \"City\" ) ( JOIN ( R rel ) ent ) ) rel )"
+    },
+    {
+        "pred_r": 3,
+        "gold_r": 3,
+        "pred_s": "( AND ( JOIN rel ent ) ( JOIN ( R rel ) ( JOIN ( R rel ) ent ) ) )",
+        "gold_s": "( AND ( JOIN rel ent ) ( JOIN ( R rel ) ( JOIN ( R rel ) rel ) ) )"
+    },
+    {
+        "pred_r": 2,
+        "gold_r": 1,
+        "pred_s": "( ARGMAX ( AND ( JOIN rel ent ) ( JOIN ( R rel ) ent ) ) rel )",
+        "gold_s": "( ARGMAX ( JOIN ( R rel ) ent ) rel )"
+    },
+    {
+        "pred_r": 2,
+        "gold_r": 1,
+        "pred_s": "( JOIN ( R rel ) ( JOIN ( R rel ) ent ) )",
+        "gold_s": "( ARGMAX ( JOIN ( R rel ) ent ) rel )"
+    },
+    {
+        "pred_r": 1,
+        "gold_r": 2,
+        "pred_s": "( JOIN ( R rel ) ent )",
+        "gold_s": "( JOIN ( R rel ) ( JOIN ( R rel ) ent ) )"
+    },
+    {
+        "pred_r": 7,
+        "gold_r": 3,
+        "pred_s": "( JOIN ( R rel ) ( TC ( AND ( JOIN rel ent ) ( JOIN ( R rel ) ent ) ) rel NOW ) )",
+        "gold_s": "( JOIN ( R rel ) ( AND ( JOIN rel ent ) ( JOIN ( R rel ) ent ) ) )"
+    },
+    {
+        "pred_r": 7,
+        "gold_r": 3,
+        "pred_s": "( JOIN ( R rel ) ( TC ( AND ( JOIN rel ent ) ( JOIN ( R rel ) ent ) ) rel NOW ) )",
+        "gold_s": "( JOIN ( R rel ) ( AND ( JOIN rel ent ) ( JOIN ( R rel ) ent ) ) )"
+    },
+    {
+        "pred_r": 1,
+        "gold_r": 2,
+        "pred_s": "( JOIN ( R rel ) ent )",
+        "gold_s": "( AND ( JOIN rel \"State\" ) ( JOIN ( R rel ) ent ) )"
+    },
+    {
+        "pred_r": 1,
+        "gold_r": 2,
+        "pred_s": "( JOIN ( R rel ) ent )",
+        "gold_s": "( AND ( JOIN rel \"State\" ) ( JOIN ( R rel ) ent ) )"
+    },
+    {
+        "pred_r": 3,
+        "gold_r": 2,
+        "pred_s": "( JOIN ( R rel ) ( AND ( JOIN rel ent ) ( JOIN ( R rel ) ent ) ) )",
+        "gold_s": "( JOIN ( R rel ) ( JOIN ( R rel ) ent ) )"
+    },
+    {
+        "pred_r": 2,
+        "gold_r": 1,
+        "pred_s": "( AND ( JOIN rel ent ) ( JOIN ( R rel ) ent ) )",
+        "gold_s": "( JOIN ( R rel ) ent )"
+    },
+    {
+        "pred_r": 2,
+        "gold_r": 1,
+        "pred_s": "( AND ( JOIN rel ent ) ( JOIN ( R rel ) ent ) )",
+        "gold_s": "( JOIN ( R rel ) ent )"
+    },
+    {
+        "pred_r": 2,
+        "gold_r": 1,
+        "pred_s": "( JOIN ( R rel ) ( JOIN ( R rel ) ent ) )",
+        "gold_s": "( JOIN ( R rel ) ent )"
+    },
+    {
+        "pred_r": 2,
+        "gold_r": 1,
+        "pred_s": "( JOIN ( R rel ) ( JOIN ( R rel ) ent ) )",
+        "gold_s": "( JOIN ( R rel ) ent )"
+    },
+    {
+        "pred_r": 2,
+        "gold_r": 1,
+        "pred_s": "( JOIN ( R rel ) ( JOIN ( R rel ) ent ) )",
+        "gold_s": "( JOIN ( R rel ) ent )"
+    },
+    {
+        "pred_r": 7,
+        "gold_r": 1,
+        "pred_s": "( JOIN ( R rel ) ( TC ( AND ( JOIN rel ent ) ( JOIN ( R rel ) ent ) ) rel 2011 ) )",
+        "gold_s": "( JOIN ( R rel ) ent )"
+    },
+    {
+        "pred_r": 2,
+        "gold_r": 3,
+        "pred_s": "( JOIN ( R rel ) ( JOIN ( R rel ) ent ) )",
+        "gold_s": "( JOIN ( R rel ) ( ARGMAX ( JOIN ( R rel ) ent ) rel ) )"
+    },
+    {
+        "pred_r": 1,
+        "gold_r": 2,
+        "pred_s": "( JOIN ( R rel ) ent )",
+        "gold_s": "( JOIN ( R rel ) ( JOIN ( R rel ) ent ) )"
+    },
+    {
+        "pred_r": 7,
+        "gold_r": 3,
+        "pred_s": "( JOIN ( R rel ) ( TC ( AND ( JOIN rel ent ) ( JOIN ( R rel ) ent ) ) rel NOW ) )",
+        "gold_s": "( JOIN ( R rel ) ( AND ( JOIN rel ent ) ( JOIN ( R rel ) ent ) ) )"
+    },
+    {
+        "pred_r": 7,
+        "gold_r": 3,
+        "pred_s": "( JOIN ( R rel ) ( TC ( AND ( JOIN rel ent ) ( JOIN ( R rel ) ent ) ) rel NOW ) )",
+        "gold_s": "( JOIN ( R rel ) ( AND ( JOIN rel ent ) ( JOIN ( R rel ) ent ) ) )"
+    },
+    {
+        "pred_r": 3,
+        "gold_r": 2,
+        "pred_s": "( AND ( JOIN rel ent ) ( JOIN ( R rel ) ( JOIN ( R rel ) ent ) ) )",
+        "gold_s": "( JOIN ( R rel ) ( JOIN ( R rel ) ent ) )"
+    },
+    {
+        "pred_r": 7,
+        "gold_r": 6,
+        "pred_s": "( JOIN ( R rel ) ( TC ( AND ( JOIN rel ent ) ( JOIN ( R rel ) ent ) ) rel 1993 ) )",
+        "gold_s": "( JOIN ( R rel ) ( TC ( JOIN ( R rel ) ent ) rel 1993 ) )"
+    },
+    {
+        "pred_r": 2,
+        "gold_r": 1,
+        "pred_s": "( AND ( JOIN rel ent ) ( JOIN ( R rel ) ent ) )",
+        "gold_s": "( JOIN ( R rel ) ent )"
+    },
+    {
+        "pred_r": 2,
+        "gold_r": 3,
+        "pred_s": "( JOIN ( R rel ) ( JOIN ( R rel ) ent ) )",
+        "gold_s": "( AND ( JOIN rel ent ) ( JOIN ( R rel ) ( JOIN ( R rel ) ent ) ) )"
+    },
+    {
+        "pred_r": 2,
+        "gold_r": 1,
+        "pred_s": "( AND ( JOIN rel ent ) ( JOIN ( R rel ) ent ) )",
+        "gold_s": "( JOIN ( R rel ) ent )"
+    },
+    {
+        "pred_r": 2,
+        "gold_r": 1,
+        "pred_s": "( JOIN ( R rel ) ( JOIN ( R rel ) ent ) )",
+        "gold_s": "( JOIN ( R rel ) ent )"
+    },
+    {
+        "pred_r": 7,
+        "gold_r": 1,
+        "pred_s": "( JOIN ( R rel ) ( TC ( AND ( JOIN rel ent ) ( JOIN ( R rel ) ent ) ) rel NOW ) )",
+        "gold_s": "( JOIN ( R rel ) ent )"
+    },
+    {
+        "pred_r": 4,
+        "gold_r": 7,
+        "pred_s": "( JOIN ( R rel ) ( ARGMAX ( AND ( JOIN rel ent ) ( JOIN ( R rel ) ent ) ) rel ) )",
+        "gold_s": "( JOIN ( R rel ) ( TC ( AND ( JOIN rel ent ) ( JOIN ( R rel ) ent ) ) rel NOW ) )"
+    },
+    {
+        "pred_r": 2,
+        "gold_r": 3,
+        "pred_s": "( JOIN ( R rel ) ( JOIN ( R rel ) ent ) )",
+        "gold_s": "( JOIN ( R rel ) ( AND ( JOIN rel ent ) ( JOIN ( R rel ) ent ) ) )"
+    },
+    {
+        "pred_r": 4,
+        "gold_r": 7,
+        "pred_s": "( JOIN ( R rel ) ( ARGMAX ( AND ( JOIN rel ent ) ( JOIN ( R rel ) ent ) ) rel ) )",
+        "gold_s": "( JOIN ( R rel ) ( TC ( AND ( JOIN rel ent ) ( JOIN ( R rel ) ent ) ) rel NOW ) )"
+    },
+    {
+        "pred_r": 4,
+        "gold_r": 7,
+        "pred_s": "( JOIN ( R rel ) ( ARGMAX ( AND ( JOIN rel ent ) ( JOIN ( R rel ) ent ) ) rel ) )",
+        "gold_s": "( JOIN ( R rel ) ( TC ( AND ( JOIN rel ent ) ( JOIN ( R rel ) ent ) ) rel NOW ) )"
+    },
+    {
+        "pred_r": 7,
+        "gold_r": 6,
+        "pred_s": "( JOIN ( R rel ) ( TC ( AND ( JOIN rel ent ) ( JOIN ( R rel ) ent ) ) rel 2011 ) )",
+        "gold_s": "( JOIN ( R rel ) ( TC ( JOIN ( R rel ) ent ) rel 2011 ) )"
+    },
+    {
+        "pred_r": 2,
+        "gold_r": 3,
+        "pred_s": "( JOIN ( R rel ) ( JOIN ( R rel ) ent ) )",
+        "gold_s": "( JOIN ( R rel ) ( AND ( JOIN rel ent ) ( JOIN ( R rel ) ent ) ) )"
+    },
+    {
+        "pred_r": 2,
+        "gold_r": 1,
+        "pred_s": "( AND ( JOIN rel ent ) ( JOIN ( R rel ) ent ) )",
+        "gold_s": "( JOIN ( R rel ) ent )"
+    },
+    {
+        "pred_r": 3,
+        "gold_r": 3,
+        "pred_s": "( JOIN ( R rel ) ( AND ( JOIN rel ent ) ( JOIN ( R rel ) ent ) ) )",
+        "gold_s": "( AND ( JOIN rel ent ) ( JOIN ( R rel ) ( JOIN ( R rel ) ent ) ) )"
+    },
+    {
+        "pred_r": 3,
+        "gold_r": 3,
+        "pred_s": "( JOIN ( R rel ) ( AND ( JOIN rel ent ) ( JOIN ( R rel ) ent ) ) )",
+        "gold_s": "( AND ( JOIN rel ent ) ( JOIN ( R rel ) ( JOIN ( R rel ) ent ) ) )"
+    },
+    {
+        "pred_r": 6,
+        "gold_r": 6,
+        "pred_s": "( JOIN ( R rel ) ( TC ( JOIN ( R rel ) ent ) rel 2012 ) )",
+        "gold_s": "( JOIN ( R rel ) ( TC ( JOIN ( R rel ) rel ) rel 2012 ) )"
+    },
+    {
+        "pred_r": 3,
+        "gold_r": 7,
+        "pred_s": "( JOIN ( R rel ) ( AND ( JOIN rel ent ) ( JOIN ( R rel ) ent ) ) )",
+        "gold_s": "( JOIN ( R rel ) ( TC ( AND ( JOIN rel ent ) ( JOIN ( R rel ) ent ) ) rel NOW ) )"
+    },
+    {
+        "pred_r": 1,
+        "gold_r": 2,
+        "pred_s": "( JOIN ( R rel ) ent )",
+        "gold_s": "( JOIN ( R rel ) ( JOIN ( R rel ) ent ) )"
+    },
+    {
+        "pred_r": 1,
+        "gold_r": 2,
+        "pred_s": "( JOIN ( R rel ) ent )",
+        "gold_s": "( JOIN ( R rel ) ( JOIN ( R rel ) ent ) )"
+    },
+    {
+        "pred_r": 1,
+        "gold_r": 2,
+        "pred_s": "( JOIN ( R rel ) ent )",
+        "gold_s": "( JOIN ( R rel ) ( JOIN ( R rel ) ent ) )"
+    },
+    {
+        "pred_r": 1,
+        "gold_r": 1,
+        "pred_s": "( JOIN ( R rel ) ent )",
+        "gold_s": "( JOIN ( R rel ) rel )"
+    },
+    {
+        "pred_r": 2,
+        "gold_r": 1,
+        "pred_s": "( AND ( JOIN rel ent ) ( JOIN ( R rel ) ent ) )",
+        "gold_s": "( JOIN ( R rel ) rel )"
+    },
+    {
+        "pred_r": 2,
+        "gold_r": 1,
+        "pred_s": "( JOIN ( R rel ) ( JOIN ( R rel ) ent ) )",
+        "gold_s": "( JOIN ( R rel ) ent )"
+    },
+    {
+        "pred_r": 2,
+        "gold_r": 1,
+        "pred_s": "( JOIN ( R rel ) ( JOIN ( R rel ) ent ) )",
+        "gold_s": "( JOIN ( R rel ) ent )"
+    },
+    {
+        "pred_r": 2,
+        "gold_r": 3,
+        "pred_s": "( JOIN ( R rel ) ( JOIN ( R rel ) ent ) )",
+        "gold_s": "( AND ( JOIN rel ent ) ( JOIN ( R rel ) ( JOIN ( R rel ) ent ) ) )"
+    },
+    {
+        "pred_r": 2,
+        "gold_r": 3,
+        "pred_s": "( JOIN ( R rel ) ( JOIN ( R rel ) ent ) )",
+        "gold_s": "( AND ( JOIN rel ent ) ( JOIN ( R rel ) ( JOIN ( R rel ) ent ) ) )"
+    },
+    {
+        "pred_r": 1,
+        "gold_r": 2,
+        "pred_s": "( JOIN ( R rel ) ent )",
+        "gold_s": "( AND ( JOIN rel ent ) ( JOIN ( R rel ) ent ) )"
+    },
+    {
+        "pred_r": 2,
+        "gold_r": 3,
+        "pred_s": "( ARGMAX ( JOIN ( R rel ) ent ) rel )",
+        "gold_s": "( ARGMAX ( AND ( JOIN rel ent ) ( JOIN ( R rel ) ent ) ) rel )"
+    },
+    {
+        "pred_r": 1,
+        "gold_r": 2,
+        "pred_s": "( JOIN ( R rel ) ent )",
+        "gold_s": "( JOIN ( R rel ) ( JOIN ( R rel ) ent ) )"
+    },
+    {
+        "pred_r": 1,
+        "gold_r": 2,
+        "pred_s": "( JOIN ( R rel ) ent )",
+        "gold_s": "( JOIN ( R rel ) ( JOIN ( R rel ) ent ) )"
+    },
+    {
+        "pred_r": 3,
+        "gold_r": 4,
+        "pred_s": "( JOIN ( R rel ) ( AND ( JOIN rel ent ) ( JOIN ( R rel ) ent ) ) )",
+        "gold_s": "( AND ( JOIN rel ent ) ( JOIN ( R rel ) ( ARGMAX ( JOIN ( R rel ) ent ) rel ) ) )"
+    },
+    {
+        "pred_r": 1,
+        "gold_r": 3,
+        "pred_s": "( JOIN ( R rel ) ent )",
+        "gold_s": "( ARGMAX ( AND ( JOIN rel ent ) ( JOIN ( R rel ) ent ) ) rel )"
+    },
+    {
+        "pred_r": 2,
+        "gold_r": 6,
+        "pred_s": "( JOIN ( R rel ) ( JOIN ( R rel ) ent ) )",
+        "gold_s": "( JOIN ( R rel ) ( TC ( JOIN ( R rel ) ent ) rel NOW ) )"
+    },
+    {
+        "pred_r": 2,
+        "gold_r": 1,
+        "pred_s": "( JOIN ( R rel ) ( JOIN ( R rel ) ent ) )",
+        "gold_s": "( JOIN ( R rel ) ent )"
+    },
+    {
+        "pred_r": 2,
+        "gold_r": 1,
+        "pred_s": "( JOIN ( R rel ) ( JOIN ( R rel ) ent ) )",
+        "gold_s": "( JOIN ( R rel ) ent )"
+    },
+    {
+        "pred_r": 2,
+        "gold_r": 1,
+        "pred_s": "( AND ( JOIN rel ent ) ( JOIN ( R rel ) ent ) )",
+        "gold_s": "( JOIN ( R rel ) ent )"
+    },
+    {
+        "pred_r": 2,
+        "gold_r": 1,
+        "pred_s": "( AND ( JOIN rel ent ) ( JOIN ( R rel ) ent ) )",
+        "gold_s": "( JOIN ( R rel ) ent )"
+    },
+    {
+        "pred_r": 2,
+        "gold_r": 6,
+        "pred_s": "( JOIN ( R rel ) ( JOIN ( R rel ) ent ) )",
+        "gold_s": "( JOIN ( R rel ) ( TC ( JOIN ( R rel ) ent ) rel NOW ) )"
+    },
+    {
+        "pred_r": 2,
+        "gold_r": 6,
+        "pred_s": "( JOIN ( R rel ) ( JOIN ( R rel ) ent ) )",
+        "gold_s": "( JOIN ( R rel ) ( TC ( JOIN ( R rel ) ent ) rel NOW ) )"
+    },
+    {
+        "pred_r": 2,
+        "gold_r": 3,
+        "pred_s": "( JOIN ( R rel ) ( JOIN ( R rel ) ent ) )",
+        "gold_s": "( JOIN ( R rel ) ( ARGMAX ( JOIN ( R rel ) ent ) rel ) )"
+    },
+    {
+        "pred_r": 2,
+        "gold_r": 1,
+        "pred_s": "( JOIN ( R rel ) ( JOIN ( R rel ) rel ) )",
+        "gold_s": "( JOIN ( R rel ) rel )"
+    },
+    {
+        "pred_r": 1,
+        "gold_r": 6,
+        "pred_s": "( JOIN ( R rel ) ent )",
+        "gold_s": "( JOIN ( R rel ) ( TC ( JOIN ( R rel ) ent ) rel 1971 ) )"
+    },
+    {
+        "pred_r": 1,
+        "gold_r": 2,
+        "pred_s": "( JOIN ( R rel ) ent )",
+        "gold_s": "( AND ( JOIN rel ent ) ( JOIN ( R rel ) ent ) )"
+    },
+    {
+        "pred_r": 2,
+        "gold_r": 1,
+        "pred_s": "( AND ( JOIN rel ent ) ( JOIN ( R rel ) ent ) )",
+        "gold_s": "( JOIN ( R rel ) ent )"
+    },
+    {
+        "pred_r": 2,
+        "gold_r": 1,
+        "pred_s": "( JOIN ( R rel ) ( JOIN ( R rel ) ent ) )",
+        "gold_s": "( JOIN ( R rel ) ent )"
+    },
+    {
+        "pred_r": 4,
+        "gold_r": 7,
+        "pred_s": "( JOIN ( R rel ) ( ARGMAX ( AND ( JOIN rel ent ) ( JOIN ( R rel ) ent ) ) rel ) )",
+        "gold_s": "( JOIN ( R rel ) ( TC ( AND ( JOIN rel ent ) ( JOIN ( R rel ) ent ) ) rel NOW ) )"
+    },
+    {
+        "pred_r": 3,
+        "gold_r": 7,
+        "pred_s": "( JOIN ( R rel ) ( AND ( JOIN rel ent ) ( JOIN ( R rel ) ent ) ) )",
+        "gold_s": "( JOIN ( R rel ) ( TC ( AND ( JOIN rel ent ) ( JOIN ( R rel ) ent ) ) rel NOW ) )"
+    },
+    {
+        "pred_r": 4,
+        "gold_r": 5,
+        "pred_s": "( JOIN ( R rel ) ( AND ( JOIN rel ent ) ( AND ( JOIN rel ent ) ( JOIN ( R rel ) ent ) ) ) )",
+        "gold_s": "( JOIN ( R rel ) ( AND ( JOIN rel ent ) ( AND ( JOIN rel ent ) ( AND ( JOIN rel ent ) ( JOIN ( R rel ) ent ) ) ) ) )"
+    },
+    {
+        "pred_r": 3,
+        "gold_r": 5,
+        "pred_s": "( JOIN ( R rel ) ( AND ( JOIN rel ent ) ( JOIN ( R rel ) ent ) ) )",
+        "gold_s": "( JOIN ( R rel ) ( AND ( JOIN rel ent ) ( AND ( JOIN rel ent ) ( AND ( JOIN rel ent ) ( JOIN ( R rel ) ent ) ) ) ) )"
+    },
+    {
+        "pred_r": 2,
+        "gold_r": 3,
+        "pred_s": "( AND ( JOIN rel ent ) ( JOIN ( R rel ) ent ) )",
+        "gold_s": "( AND ( JOIN rel ent ) ( JOIN ( R rel ) ( JOIN ( R rel ) ent ) ) )"
+    },
+    {
+        "pred_r": 1,
+        "gold_r": 2,
+        "pred_s": "( JOIN ( R rel ) ent )",
+        "gold_s": "( AND ( JOIN rel ent ) ( JOIN ( R rel ) ent ) )"
+    },
+    {
+        "pred_r": 3,
+        "gold_r": 2,
+        "pred_s": "( JOIN ( R rel ) ( AND ( JOIN rel ent ) ( JOIN ( R rel ) ent ) ) )",
+        "gold_s": "( JOIN ( R rel ) ( JOIN ( R rel ) ent ) )"
+    },
+    {
+        "pred_r": 3,
+        "gold_r": 4,
+        "pred_s": "( JOIN ( R rel ) ( AND ( JOIN rel ent ) ( JOIN ( R rel ) ent ) ) )",
+        "gold_s": "( JOIN ( R rel ) ( AND ( JOIN rel ent ) ( AND ( JOIN rel ent ) ( JOIN ( R rel ) ent ) ) ) )"
+    },
+    {
+        "pred_r": 3,
+        "gold_r": 4,
+        "pred_s": "( JOIN ( R rel ) ( AND ( JOIN rel ent ) ( JOIN ( R rel ) ent ) ) )",
+        "gold_s": "( JOIN ( R rel ) ( AND ( JOIN rel ent ) ( AND ( JOIN rel ent ) ( JOIN ( R rel ) ent ) ) ) )"
+    },
+    {
+        "pred_r": 1,
+        "gold_r": 3,
+        "pred_s": "( JOIN ( R rel ) ent )",
+        "gold_s": "( JOIN ( R rel ) ( AND ( JOIN rel ent ) ( JOIN ( R rel ) ent ) ) )"
+    },
+    {
+        "pred_r": 1,
+        "gold_r": 2,
+        "pred_s": "( JOIN ( R rel ) ent )",
+        "gold_s": "( AND ( JOIN rel ent ) ( JOIN ( R rel ) ent ) )"
+    },
+    {
+        "pred_r": 1,
+        "gold_r": 2,
+        "pred_s": "( JOIN ( R rel ) ent )",
+        "gold_s": "( AND ( JOIN rel ent ) ( JOIN ( R rel ) ent ) )"
+    },
+    {
+        "pred_r": 3,
+        "gold_r": 2,
+        "pred_s": "( ARGMAX ( AND ( JOIN rel ent ) ( JOIN ( R rel ) ent ) ) rel )",
+        "gold_s": "( ARGMAX ( JOIN ( R rel ) ent ) rel )"
+    },
+    {
+        "pred_r": 3,
+        "gold_r": 2,
+        "pred_s": "( AND ( JOIN rel ent ) ( JOIN ( R rel ) ( JOIN ( R rel ) ent ) ) )",
+        "gold_s": "( JOIN ( R rel ) ( JOIN ( R rel ) ent ) )"
+    },
+    {
+        "pred_r": 1,
+        "gold_r": 2,
+        "pred_s": "( JOIN ( R rel ) ent )",
+        "gold_s": "( JOIN ( R rel ) ( JOIN ( R rel ) ent ) )"
+    },
+    {
+        "pred_r": 1,
+        "gold_r": 2,
+        "pred_s": "( JOIN ( R rel ) ent )",
+        "gold_s": "( JOIN ( R rel ) ( JOIN ( R rel ) ent ) )"
+    },
+    {
+        "pred_r": 1,
+        "gold_r": 2,
+        "pred_s": "( JOIN ( R rel ) ent )",
+        "gold_s": "( JOIN ( R rel ) ( JOIN ( R rel ) ent ) )"
+    },
+    {
+        "pred_r": 1,
+        "gold_r": 2,
+        "pred_s": "( JOIN ( R rel ) ent )",
+        "gold_s": "( JOIN ( R rel ) ( JOIN ( R rel ) ent ) )"
+    },
+    {
+        "pred_r": 3,
+        "gold_r": 4,
+        "pred_s": "( JOIN ( R rel ) ( AND ( JOIN rel ent ) ( JOIN ( R rel ) ent ) ) )",
+        "gold_s": "( JOIN ( R rel ) ( ARGMAX ( AND ( JOIN rel ent ) ( JOIN ( R rel ) ent ) ) rel ) )"
+    },
+    {
+        "pred_r": 1,
+        "gold_r": 3,
+        "pred_s": "( JOIN ( R rel ) ent )",
+        "gold_s": "( JOIN ( R rel ) ( AND ( JOIN rel ent ) ( JOIN ( R rel ) ent ) ) )"
+    },
+    {
+        "pred_r": 1,
+        "gold_r": 3,
+        "pred_s": "( JOIN ( R rel ) ent )",
+        "gold_s": "( JOIN ( R rel ) ( AND ( JOIN rel ent ) ( JOIN ( R rel ) ent ) ) )"
+    },
+    {
+        "pred_r": 4,
+        "gold_r": 2,
+        "pred_s": "( AND ( JOIN rel ent ) ( JOIN ( R rel ) ( AND ( JOIN rel ent ) ( JOIN ( R rel ) ent ) ) ) )",
+        "gold_s": "( AND ( JOIN rel ent ) ( JOIN ( R rel ) ent ) )"
+    },
+    {
+        "pred_r": 4,
+        "gold_r": 2,
+        "pred_s": "( AND ( JOIN rel ent ) ( JOIN ( R rel ) ( AND ( JOIN rel ent ) ( JOIN ( R rel ) ent ) ) ) )",
+        "gold_s": "( AND ( JOIN rel ent ) ( JOIN ( R rel ) ent ) )"
+    },
+    {
+        "pred_r": 3,
+        "gold_r": 3,
+        "pred_s": "( JOIN ( R rel ) ( AND ( JOIN rel ent ) ( JOIN ( R rel ) ent ) ) )",
+        "gold_s": "( JOIN ( R rel ) ( ARGMIN ( JOIN ( R rel ) ent ) rel ) )"
+    },
+    {
+        "pred_r": 7,
+        "gold_r": 1,
+        "pred_s": "( JOIN ( R rel ) ( TC ( AND ( JOIN rel ent ) ( JOIN ( R rel ) ent ) ) rel NOW ) )",
+        "gold_s": "( JOIN ( R rel ) ent )"
+    },
+    {
+        "pred_r": 7,
+        "gold_r": 1,
+        "pred_s": "( JOIN ( R rel ) ( TC ( AND ( JOIN rel ent ) ( JOIN ( R rel ) ent ) ) rel NOW ) )",
+        "gold_s": "( JOIN ( R rel ) ent )"
+    },
+    {
+        "pred_r": 3,
+        "gold_r": 4,
+        "pred_s": "( JOIN ( R rel ) ( AND ( JOIN rel ent ) ( JOIN ( R rel ) ent ) ) )",
+        "gold_s": "( JOIN ( R rel ) ( AND ( JOIN rel ent ) ( AND ( JOIN rel ent ) ( JOIN ( R rel ) ent ) ) ) )"
+    },
+    {
+        "pred_r": 2,
+        "gold_r": 3,
+        "pred_s": "( JOIN ( R rel ) ( JOIN ( R rel ) ent ) )",
+        "gold_s": "( AND ( JOIN rel ent ) ( JOIN ( R rel ) ( JOIN ( R rel ) ent ) ) )"
+    },
+    {
+        "pred_r": 2,
+        "gold_r": 3,
+        "pred_s": "( AND ( JOIN rel ent ) ( JOIN ( R rel ) ent ) )",
+        "gold_s": "( AND ( JOIN rel ent ) ( JOIN ( R rel ) ( JOIN ( R rel ) ent ) ) )"
+    },
+    {
+        "pred_r": 2,
+        "gold_r": 3,
+        "pred_s": "( AND ( JOIN rel ent ) ( JOIN ( R rel ) ent ) )",
+        "gold_s": "( AND ( JOIN rel ent ) ( AND ( JOIN rel ent ) ( JOIN ( R rel ) ent ) ) )"
+    },
+    {
+        "pred_r": 2,
+        "gold_r": 3,
+        "pred_s": "( AND ( JOIN rel ent ) ( JOIN ( R rel ) ent ) )",
+        "gold_s": "( AND ( JOIN rel ent ) ( AND ( JOIN rel ent ) ( JOIN ( R rel ) ent ) ) )"
+    },
+    {
+        "pred_r": 2,
+        "gold_r": 6,
+        "pred_s": "( JOIN ( R rel ) ( JOIN ( R rel ) ent ) )",
+        "gold_s": "( JOIN ( R rel ) ( TC ( JOIN ( R rel ) ent ) rel NOW ) )"
+    },
+    {
+        "pred_r": 1,
+        "gold_r": 2,
+        "pred_s": "( JOIN ( R rel ) ent )",
+        "gold_s": "( JOIN ( R rel ) ( JOIN ( R rel ) ent ) )"
+    },
+    {
+        "pred_r": 1,
+        "gold_r": 3,
+        "pred_s": "( JOIN ( R rel ) ent )",
+        "gold_s": "( AND ( JOIN rel ent ) ( JOIN ( R rel ) ( JOIN ( R rel ) ent ) ) )"
+    },
+    {
+        "pred_r": 1,
+        "gold_r": 3,
+        "pred_s": "( JOIN ( R rel ) ent )",
+        "gold_s": "( AND ( JOIN rel ent ) ( JOIN ( R rel ) ( JOIN ( R rel ) ent ) ) )"
+    },
+    {
+        "pred_r": 1,
+        "gold_r": 2,
+        "pred_s": "( JOIN ( R rel ) ent )",
+        "gold_s": "( JOIN ( R rel ) ( JOIN ( R rel ) ent ) )"
+    },
+    {
+        "pred_r": 1,
+        "gold_r": 2,
+        "pred_s": "( JOIN ( R rel ) ent )",
+        "gold_s": "( JOIN ( R rel ) ( JOIN ( R rel ) ent ) )"
+    },
+    {
+        "pred_r": 1,
+        "gold_r": 2,
+        "pred_s": "( JOIN ( R rel ) ent )",
+        "gold_s": "( JOIN ( R rel ) ( JOIN ( R rel ) ent ) )"
+    },
+    {
+        "pred_r": 1,
+        "gold_r": 2,
+        "pred_s": "( JOIN ( R rel ) ent )",
+        "gold_s": "( JOIN ( R rel ) ( JOIN ( R rel ) ent ) )"
+    },
+    {
+        "pred_r": 2,
+        "gold_r": 1,
+        "pred_s": "( AND ( JOIN rel ent ) ( JOIN ( R rel ) ent ) )",
+        "gold_s": "( JOIN ( R rel ) ent )"
+    },
+    {
+        "pred_r": 1,
+        "gold_r": 2,
+        "pred_s": "( JOIN ( R rel ) ent )",
+        "gold_s": "( AND ( JOIN rel ent ) ( JOIN ( R rel ) ent ) )"
+    },
+    {
+        "pred_r": 1,
+        "gold_r": 2,
+        "pred_s": "( JOIN ( R rel ) ent )",
+        "gold_s": "( AND ( JOIN rel ent ) ( JOIN ( R rel ) ent ) )"
+    },
+    {
+        "pred_r": 2,
+        "gold_r": 2,
+        "pred_s": "( AND ( JOIN rel ent ) ( JOIN ( R rel ) ent ) )",
+        "gold_s": "( JOIN ( R rel ) ( JOIN ( R rel ) ent ) )"
+    },
+    {
+        "pred_r": 2,
+        "gold_r": 2,
+        "pred_s": "( AND ( JOIN rel ent ) ( JOIN ( R rel ) ent ) )",
+        "gold_s": "( JOIN ( R rel ) ( JOIN ( R rel ) ent ) )"
+    },
+    {
+        "pred_r": 2,
+        "gold_r": 1,
+        "pred_s": "( AND ( JOIN rel ent ) ( JOIN ( R rel ) ent ) )",
+        "gold_s": "( JOIN ( R rel ) ent )"
+    },
+    {
+        "pred_r": 1,
+        "gold_r": 2,
+        "pred_s": "( JOIN ( R rel ) ent )",
+        "gold_s": "( ARGMIN ( JOIN ( R rel ) ent ) rel )"
+    },
+    {
+        "pred_r": 2,
+        "gold_r": 3,
+        "pred_s": "( JOIN ( R rel ) ( JOIN ( R rel ) ent ) )",
+        "gold_s": "( JOIN ( R rel ) ( AND ( JOIN rel ent ) ( JOIN ( R rel ) ent ) ) )"
+    },
+    {
+        "pred_r": 2,
+        "gold_r": 1,
+        "pred_s": "( AND ( JOIN rel ent ) ( JOIN ( R rel ) ent ) )",
+        "gold_s": "( JOIN ( R rel ) ent )"
+    },
+    {
+        "pred_r": 2,
+        "gold_r": 1,
+        "pred_s": "( JOIN ( R rel ) ( JOIN ( R rel ) ent ) )",
+        "gold_s": "( JOIN ( R rel ) ent )"
+    },
+    {
+        "pred_r": 2,
+        "gold_r": 3,
+        "pred_s": "( JOIN ( R rel ) ( JOIN ( R rel ) ent ) )",
+        "gold_s": "( JOIN ( R rel ) ( ARGMIN ( JOIN ( R rel ) ent ) rel ) )"
+    },
+    {
+        "pred_r": 2,
+        "gold_r": 3,
+        "pred_s": "( JOIN ( R rel ) ( JOIN ( R rel ) ent ) )",
+        "gold_s": "( JOIN ( R rel ) ( ARGMIN ( JOIN ( R rel ) ent ) rel ) )"
+    },
+    {
+        "pred_r": 2,
+        "gold_r": 1,
+        "pred_s": "( AND ( JOIN rel ent ) ( JOIN ( R rel ) ent ) )",
+        "gold_s": "( JOIN ( R rel ) ent )"
+    },
+    {
+        "pred_r": 2,
+        "gold_r": 2,
+        "pred_s": "( JOIN ( R rel ) ( JOIN ( R rel ) ent ) )",
+        "gold_s": "( AND ( JOIN rel ent ) ( JOIN ( R rel ) ent ) )"
+    },
+    {
+        "pred_r": 1,
+        "gold_r": 2,
+        "pred_s": "( JOIN ( R rel ) ent )",
+        "gold_s": "( AND ( JOIN rel ent ) ( JOIN ( R rel ) ent ) )"
+    },
+    {
+        "pred_r": 1,
+        "gold_r": 2,
+        "pred_s": "( JOIN ( R rel ) ent )",
+        "gold_s": "( AND ( JOIN rel ent ) ( JOIN ( R rel ) ent ) )"
+    },
+    {
+        "pred_r": 3,
+        "gold_r": 2,
+        "pred_s": "( AND ( JOIN rel ent ) ( JOIN ( R rel ) ( JOIN ( R rel ) ent ) ) )",
+        "gold_s": "( JOIN ( R rel ) ( JOIN ( R rel ) ent ) )"
+    },
+    {
+        "pred_r": 2,
+        "gold_r": 1,
+        "pred_s": "( JOIN ( R rel ) ( JOIN ( R rel ) ent ) )",
+        "gold_s": "( JOIN ( R rel ) ent )"
+    },
+    {
+        "pred_r": 2,
+        "gold_r": 3,
+        "pred_s": "( AND ( JOIN rel ent ) ( JOIN ( R rel ) ent ) )",
+        "gold_s": "( AND ( JOIN rel ent ) ( JOIN ( R rel ) ( JOIN ( R rel ) ent ) ) )"
+    },
+    {
+        "pred_r": 6,
+        "gold_r": 5,
+        "pred_s": "( JOIN ( R rel ) ( TC ( JOIN ( R rel ) ent ) rel 2012 ) )",
+        "gold_s": "( TC ( JOIN ( R rel ) ent ) rel 2012 )"
+    },
+    {
+        "pred_r": 7,
+        "gold_r": 6,
+        "pred_s": "( JOIN ( R rel ) ( TC ( AND ( JOIN rel ent ) ( JOIN ( R rel ) ent ) ) rel NOW ) )",
+        "gold_s": "( JOIN ( R rel ) ( TC ( JOIN ( R rel ) ent ) rel NOW ) )"
+    },
+    {
+        "pred_r": 3,
+        "gold_r": 2,
+        "pred_s": "( AND ( JOIN rel ent ) ( JOIN ( R rel ) ( JOIN ( R rel ) ent ) ) )",
+        "gold_s": "( JOIN ( R rel ) ( JOIN ( R rel ) ent ) )"
+    },
+    {
+        "pred_r": 3,
+        "gold_r": 2,
+        "pred_s": "( AND ( JOIN rel ent ) ( JOIN ( R rel ) ( JOIN ( R rel ) rel ) ) )",
+        "gold_s": "( JOIN ( R rel ) ( JOIN ( R rel ) ent ) )"
+    },
+    {
+        "pred_r": 2,
+        "gold_r": 3,
+        "pred_s": "( JOIN ( R rel ) ( JOIN ( R rel ) ent ) )",
+        "gold_s": "( AND ( JOIN rel ent ) ( JOIN ( R rel ) ( JOIN ( R rel ) ent ) ) )"
+    },
+    {
+        "pred_r": 3,
+        "gold_r": 2,
+        "pred_s": "( JOIN ( R rel ) ( AND ( JOIN rel ent ) ( JOIN ( R rel ) ent ) ) )",
+        "gold_s": "( JOIN ( R rel ) ( JOIN ( R rel ) ent ) )"
+    },
+    {
+        "pred_r": 3,
+        "gold_r": 2,
+        "pred_s": "( AND ( JOIN rel ent ) ( AND ( JOIN rel ent ) ( JOIN ( R rel ) ent ) ) )",
+        "gold_s": "( JOIN ( R rel ) ( JOIN ( R rel ) ent ) )"
+    },
+    {
+        "pred_r": 2,
+        "gold_r": 1,
+        "pred_s": "( JOIN ( R rel ) ( JOIN ( R rel ) ent ) )",
+        "gold_s": "( JOIN ( R rel ) ent )"
+    },
+    {
+        "pred_r": 2,
+        "gold_r": 1,
+        "pred_s": "( JOIN ( R rel ) ( JOIN ( R rel ) ent ) )",
+        "gold_s": "( JOIN ( R rel ) ent )"
+    },
+    {
+        "pred_r": 1,
+        "gold_r": 3,
+        "pred_s": "( JOIN ( R rel ) ent )",
+        "gold_s": "( JOIN ( R rel ) ( AND ( JOIN rel ent ) ( JOIN ( R rel ) ent ) ) )"
+    },
+    {
+        "pred_r": 1,
+        "gold_r": 3,
+        "pred_s": "( JOIN ( R rel ) ent )",
+        "gold_s": "( AND ( JOIN rel ent ) ( JOIN ( R rel ) ( JOIN ( R rel ) ent ) ) )"
+    },
+    {
+        "pred_r": 1,
+        "gold_r": 3,
+        "pred_s": "( JOIN ( R rel ) ent )",
+        "gold_s": "( AND ( JOIN rel ent ) ( JOIN ( R rel ) ( JOIN ( R rel ) ent ) ) )"
+    },
+    {
+        "pred_r": 3,
+        "gold_r": 2,
+        "pred_s": "( JOIN ( R rel ) ( AND ( JOIN rel ent ) ( JOIN ( R rel ) ent ) ) )",
+        "gold_s": "( JOIN ( R rel ) ( JOIN ( R rel ) ent ) )"
+    },
+    {
+        "pred_r": 2,
+        "gold_r": 1,
+        "pred_s": "( JOIN ( R rel ) ( JOIN ( R rel ) ent ) )",
+        "gold_s": "( JOIN ( R rel ) ent )"
+    },
+    {
+        "pred_r": 2,
+        "gold_r": 1,
+        "pred_s": "( JOIN ( R rel ) ( JOIN ( R rel ) ent ) )",
+        "gold_s": "( JOIN ( R rel ) ent )"
+    },
+    {
+        "pred_r": 3,
+        "gold_r": 6,
+        "pred_s": "( AND ( JOIN rel ent ) ( JOIN ( R rel ) ( JOIN ( R rel ) ent ) ) )",
+        "gold_s": "( TC ( AND ( JOIN rel ent ) ( JOIN ( R rel ) ent ) ) rel 1859 )"
+    },
+    {
+        "pred_r": 3,
+        "gold_r": 6,
+        "pred_s": "( AND ( JOIN rel ent ) ( AND ( JOIN rel ent ) ( JOIN ( R rel ) ent ) ) )",
+        "gold_s": "( TC ( AND ( JOIN rel ent ) ( JOIN ( R rel ) ent ) ) rel 1859 )"
+    },
+    {
+        "pred_r": 2,
+        "gold_r": 6,
+        "pred_s": "( JOIN ( R rel ) ( JOIN ( R rel ) ent ) )",
+        "gold_s": "( JOIN ( R rel ) ( TC ( JOIN ( R rel ) ent ) rel NOW ) )"
+    },
+    {
+        "pred_r": 2,
+        "gold_r": 6,
+        "pred_s": "( JOIN ( R rel ) ( JOIN ( R rel ) ent ) )",
+        "gold_s": "( JOIN ( R rel ) ( TC ( JOIN ( R rel ) ent ) rel NOW ) )"
+    },
+    {
+        "pred_r": 1,
+        "gold_r": 2,
+        "pred_s": "( JOIN ( R rel ) ent )",
+        "gold_s": "( AND ( JOIN rel ent ) ( JOIN ( R rel ) ent ) )"
+    },
+    {
+        "pred_r": 2,
+        "gold_r": 3,
+        "pred_s": "( JOIN ( R rel ) ( JOIN ( R rel ) ent ) )",
+        "gold_s": "( JOIN ( R rel ) ( AND ( JOIN rel ent ) ( JOIN ( R rel ) ent ) ) )"
+    },
+    {
+        "pred_r": 3,
+        "gold_r": 2,
+        "pred_s": "( JOIN ( R rel ) ( AND ( JOIN rel ent ) ( JOIN ( R rel ) ent ) ) )",
+        "gold_s": "( JOIN ( R rel ) ( JOIN ( R rel ) ent ) )"
+    },
+    {
+        "pred_r": 6,
+        "gold_r": 2,
+        "pred_s": "( JOIN ( R rel ) ( TC ( JOIN ( R rel ) ent ) rel NOW ) )",
+        "gold_s": "( JOIN ( R rel ) ( JOIN ( R rel ) ent ) )"
+    },
+    {
+        "pred_r": 7,
+        "gold_r": 1,
+        "pred_s": "( AND ( JOIN rel ent ) ( JOIN ( R rel ) ent ) ( JOIN ( R rel ) ent ) )",
+        "gold_s": "( JOIN ( R rel ) ent )"
+    },
+    {
+        "pred_r": 7,
+        "gold_r": 1,
+        "pred_s": "( AND ( JOIN rel ent ) ( JOIN ( R rel ) ent ) ( TC ( JOIN ( R rel ) ent ) rel ) )",
+        "gold_s": "( JOIN ( R rel ) ent )"
+    },
+    {
+        "pred_r": 6,
+        "gold_r": 3,
+        "pred_s": "( JOIN ( R rel ) ( TC ent ) )",
+        "gold_s": "( JOIN ( R rel ) ( ARGMAX ( JOIN ( R rel ) ent ) rel ) )"
+    },
+    {
+        "pred_r": 1,
+        "gold_r": 3,
+        "pred_s": "( JOIN ( R rel ) ent )",
+        "gold_s": "( JOIN ( R rel ) ( ARGMAX ( JOIN ( R rel ) ent ) rel ) )"
+    },
+    {
+        "pred_r": 3,
+        "gold_r": 4,
+        "pred_s": "( JOIN ( R rel ) ( AND ( JOIN rel ent ) ( JOIN ( R rel ) ent ) ) )",
+        "gold_s": "( JOIN ( R rel ) ( ARGMAX ( AND ( JOIN rel ent ) ( JOIN ( R rel ) ent ) ) rel ) )"
+    },
+    {
+        "pred_r": 3,
+        "gold_r": 1,
+        "pred_s": "( AND ( JOIN rel ent ) ( JOIN ( R rel ) ( JOIN ( R rel ) ent ) ) )",
+        "gold_s": "( JOIN ( R rel ) ent )"
+    },
+    {
+        "pred_r": 3,
+        "gold_r": 1,
+        "pred_s": "( AND ( JOIN rel ent ) ( JOIN ( R rel ) ( JOIN ( R rel ) ent ) ) )",
+        "gold_s": "( JOIN ( R rel ) ent )"
+    },
+    {
+        "pred_r": 1,
+        "gold_r": 2,
+        "pred_s": "( JOIN ( R rel ) ent )",
+        "gold_s": "( AND ( JOIN rel ent ) ( JOIN ( R rel ) ent ) )"
+    },
+    {
+        "pred_r": 2,
+        "gold_r": 1,
+        "pred_s": "( AND ( JOIN rel ent ) ( JOIN ( R rel ) ent ) )",
+        "gold_s": "( JOIN ( R rel ) ent )"
+    }
+]
