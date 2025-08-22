@@ -185,3 +185,6 @@ scripts/README_LLaMa2-1.1b.md
 tongji.py
 tongji_webqsp.py
 tongji_cwq.py
+
+# Files
+test_results/log*.json
