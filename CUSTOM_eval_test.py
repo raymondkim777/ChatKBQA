@@ -65,7 +65,7 @@ def remove_entity_relation_placeholders(output: str):
     return result
 
 
-def same_rel_cnt(object: dict) -> bool:
+def lf_correct_rel_cnt(object: dict) -> bool:
     pred_r = object['pred_r']
     pred_s = object['pred_s']
     return pred_r == pred_s.count('rel')
@@ -78,9 +78,14 @@ def check_structure(dataloader: list, log_result: bool):
     match_cnt = 0
     mismatch_cnt = 0
     total_cnt = 0
+    rel_mismatch_cnt = 0
+    rel_match_cnt = 0
+    rel_match_lf_mismatch_cnt = 0
+    
     match_data = []
     mismatch_data = []
-    log_data = []
+    log_pred_rel_mismatch_data = []
+    log_rel_mismatch_data = []
 
     for i, pred in enumerate(dataloader):
         predictions = pred['predict']   # list of rel_cnt/S-exp strings
@@ -109,6 +114,7 @@ def check_structure(dataloader: list, log_result: bool):
             
             if pred_skeleton == gold_skeleton:
                 match_cnt += 1
+                rel_match_cnt += 1
                 match_data.append({
                     'NLQues': pred['input'][12:-1],
                     'pred_r': pred_rel,
@@ -130,8 +136,15 @@ def check_structure(dataloader: list, log_result: bool):
                 mismatch_data.append(mismatch_obj)
     
                 # Compare rel predict & rel included in LF
-                if log_result and not same_rel_cnt(mismatch_obj):
-                    log_data.append(mismatch_obj)
+                if log_result and not lf_correct_rel_cnt(mismatch_obj):
+                    log_pred_rel_mismatch_data.append(mismatch_obj)
+                if pred_rel == gold_list[0]:
+                    rel_match_cnt += 1
+                    rel_match_lf_mismatch_cnt += 1
+                    if log_result:
+                        log_rel_mismatch_data.append(mismatch_obj)
+                else:
+                    rel_mismatch_cnt += 1
     
             # if not same_logical_form(pred_skeleton, gold_skeleton):
             #     output_data.append({ 'pred_s': pred_skeleton, 'gold_s': gold_skeleton, })
@@ -148,6 +161,8 @@ def check_structure(dataloader: list, log_result: bool):
     print("Total predictions:", total_cnt)
     print("Match rate:", match_cnt / total_cnt)
     print("Mismatch rate:", mismatch_cnt / total_cnt)
+    print("Rel(X) rate:", rel_mismatch_cnt / total_cnt)
+    print("Rel(O) LF(X) rate:", rel_match_lf_mismatch_cnt / rel_match_cnt)
     print()
 
     # JSON
@@ -157,8 +172,11 @@ def check_structure(dataloader: list, log_result: bool):
     mismatch_file_path = open_write_file(OUTPUT_DIR, f'lf_skeleton_mismatch.json')
     dump_json(mismatch_data, mismatch_file_path, indent=4)
     
-    log_file_path = open_write_file(OUTPUT_DIR, f'log_lf_skeleton_mismatch_rel.json')
-    dump_json(log_data, log_file_path, indent=4)
+    log1_file_path = open_write_file(OUTPUT_DIR, f'log_lf_predict_rel_mismatch.json')
+    dump_json(log_pred_rel_mismatch_data, log1_file_path, indent=4)
+    
+    log2_file_path = open_write_file(OUTPUT_DIR, f'log_lf_rel_cmp.json')
+    dump_json(log_rel_mismatch_data, log2_file_path, indent=4)
 
 
 if __name__=='__main__':
