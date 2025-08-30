@@ -141,12 +141,46 @@ def process_rels(dataset: str, dataset_type: str, log_result: bool = False) -> N
     dump_json(new_data, new_data_path, indent=4)
 
 
+def merge_train_test(dataset: str):
+    NEW_DATA_DIR = f'data/{dataset}/generation/merged'
+    
+    data_train_path = f'data/{dataset}/generation/merged/{dataset}_train.json'
+    data_test_path = f'data/{dataset}/generation/merged/{dataset}_test.json'
+    
+    data_train = load_json(data_train_path)
+    data_test = load_json(data_test_path)
+    
+    new_data_train = []
+    new_data_test = []
+    
+    for question in data_train:
+        new_question = {
+            "question": question["question"],
+            "labels": question["rel_cnt"],
+        }
+        new_data_train.append(new_question)
+    
+    for question in data_test:
+        new_question = {
+            "question": question["question"],
+            "labels": question["rel_cnt"],
+        }
+        new_data_test.append(new_question)
+        
+    
+    new_train_path = open_write_file(NEW_DATA_DIR, f'{dataset}_train_class.json')
+    dump_json(new_data_train, new_train_path, indent=4)
+    
+    new_test_path = open_write_file(NEW_DATA_DIR, f'{dataset}_test_class.json')
+    dump_json(new_data_test, new_test_path, indent=4)
+
 
 if __name__ == "__main__":
     args = _parse_args()
 
     process_rels(args.dataset, 'train', args.log)
     process_rels(args.dataset, 'test', args.log)
+    merge_train_test(args.dataset)
     
     # log results
     if args.log:

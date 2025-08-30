@@ -1,9 +1,9 @@
 import os
-from components.utils import load_json, dump_json
-from model_args import model_path, use_fast_tokenizer
+from .model_args import model_path, use_fast_tokenizer
 
 import numpy as np
 import evaluate
+
 from datasets import load_dataset
 from transformers import (
     AutoConfig,
@@ -26,14 +26,14 @@ def load_classifier_model_and_tokenizer():
     }
 
     config = AutoConfig.from_pretrained(
-        model_path, 
+        model_path,
         **config_kwargs
     )
 
     tokenizer = AutoTokenizer.from_pretrained(
         model_path,
-        use_fast=use_fast_tokenizer,
-        padding_side="right", # training with left-padded tensors in fp16 precision may cause overflow
+        # use_fast=use_fast_tokenizer,
+        # padding_side="right", # training with left-padded tensors in fp16 precision may cause overflow
         **config_kwargs
     )
 
@@ -41,7 +41,6 @@ def load_classifier_model_and_tokenizer():
     model = AutoModelForSequenceClassification.from_pretrained(
         model_path,
         num_labels=5,
-        config=config,
         # torch_dtype=model_args.compute_dtype,
         # low_cpu_mem_usage=(not is_deepspeed_zero3_enabled()),
         **config_kwargs
@@ -80,21 +79,16 @@ def load_classifier_model_and_tokenizer():
     
     
 def classifier_sft(dataset_name: str):
-    data_train_path = f'data/{dataset_name}/generation/merged/{dataset_name}_train.json'
-    data_train = load_dataset("json", data_files=data_train_path)
-    
-    data_test_path = f'data/{dataset_name}/generation/merged/{dataset_name}_test.json'
-    data_test = load_dataset("json", data_files=data_test_path)
+    data_train_path = f'data/{dataset_name}/generation/merged/{dataset_name}_train_class.json'
+    data_test_path = f'data/{dataset_name}/generation/merged/{dataset_name}_test_class.json'
+    dataset = load_dataset("json", data_files={'train': data_train_path, 'test': data_test_path})
     
     model, tokenizer = load_classifier_model_and_tokenizer()
     
-    def tokenize(examples):
+    def encode(examples):
         return tokenizer(examples["question"], padding="max_length", truncation=True)
     
-    dataset = {
-        "train": data_train.map(tokenize, batched=True),
-        "test": data_test.map(tokenize, batched=True),
-    }
+    dataset = dataset.map(encode, batched=True)
     
     metric = evaluate.load("accuracy")
     
@@ -106,7 +100,7 @@ def classifier_sft(dataset_name: str):
 
     training_args = TrainingArguments(
         output_dir=OUTPUT_DIR,
-        eval_strategy="epoch",
+        evaluation_strategy="epoch",
         push_to_hub=False,
     )
     
@@ -117,4 +111,5 @@ def classifier_sft(dataset_name: str):
         eval_dataset=dataset["test"],
         compute_metrics=compute_metrics,
     )
+    
     trainer.train()

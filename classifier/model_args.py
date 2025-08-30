@@ -1,4 +1,4 @@
-model_path = "google-bert/bert-base-cased"
+model_path = "google-bert/bert-base-uncased"
 use_fast_tokenizer = False
 
 dataset = "WebQSP"
