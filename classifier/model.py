@@ -10,10 +10,10 @@ from transformers import (
     AutoModelForSequenceClassification,
     AutoTokenizer,
     TrainingArguments,
-    TrainerCallback, 
     Trainer,
+    TFAutoModelForSequenceClassification
 )
-
+from tensorflow.keras.optimizers import Adam
 
 OUTPUT_DIR = f"Reading/Bert-base-uncased/{model_path}_Freebase_NQ_lora/evaluation_beam"
 
@@ -24,12 +24,7 @@ def load_classifier_model_and_tokenizer():
         "use_auth_token": True,
         "token": os.getenv("HF_AUTH_TOKEN"),
     }
-
-    config = AutoConfig.from_pretrained(
-        model_path,
-        **config_kwargs
-    )
-
+    
     tokenizer = AutoTokenizer.from_pretrained(
         model_path,
         # use_fast=use_fast_tokenizer,
@@ -38,7 +33,7 @@ def load_classifier_model_and_tokenizer():
     )
 
     # Load and prepare pre-trained models (without valuehead).
-    model = AutoModelForSequenceClassification.from_pretrained(
+    model = TFAutoModelForSequenceClassification.from_pretrained(
         model_path,
         num_labels=5,
         # torch_dtype=model_args.compute_dtype,
@@ -73,7 +68,7 @@ def load_classifier_model_and_tokenizer():
     # logger.info("trainable params: {:d} || all params: {:d} || trainable%: {:.4f}".format(
     #     trainable_params, all_param, 100 * trainable_params / all_param
     # ))
-
+    
     return model, tokenizer
 
     
@@ -84,6 +79,17 @@ def classifier_sft(dataset_name: str):
     dataset = load_dataset("json", data_files={'train': data_train_path, 'test': data_test_path})
     
     model, tokenizer = load_classifier_model_and_tokenizer()
+    
+    tokenized_data = tokenizer(dataset["train"]["question"], return_tensors='np', padding=True)
+    tokenized_data = dict(tokenized_data)
+    
+    labels = np.array(dataset["train"]["labels"])
+    
+    model.compile(optimizer=Adam(3e-5))
+    
+    model.fit(tokenized_data, labels)
+    return
+    
     
     def encode(examples):
         return tokenizer(examples["question"], padding="max_length", truncation=True)

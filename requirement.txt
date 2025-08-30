@@ -44,3 +44,4 @@ gradio
 SPARQLWrapper
 pyodbc
 evaluate
+tensorflow
