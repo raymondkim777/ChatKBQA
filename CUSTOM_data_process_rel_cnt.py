@@ -156,14 +156,14 @@ def merge_train_test(dataset: str):
     for question in data_train:
         new_question = {
             "question": question["question"],
-            "labels": question["rel_cnt"],
+            "label": question["rel_cnt"] - 1,
         }
         new_data_train.append(new_question)
     
     for question in data_test:
         new_question = {
             "question": question["question"],
-            "labels": question["rel_cnt"],
+            "label": question["rel_cnt"] - 1,
         }
         new_data_test.append(new_question)
         
