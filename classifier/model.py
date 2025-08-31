@@ -108,13 +108,13 @@ def classifier_sft(dataset_name: str):
         num_train_epochs=ma.num_train_epochs,
         weight_decay=ma.weight_decay,
         
-        logging_dir=LOG_DIR,
-        logging_steps=ma.logging_steps,
+        # logging_dir=LOG_DIR,
+        # logging_steps=ma.logging_steps,
         
         report_to="none",   # wandb output disable
-        save_strategy="epoch",
+        save_strategy="steps",
         save_steps=ma.save_steps,
-        resume_from_checkpoint=CHECKPOINT_DIR,
+        resume_from_checkpoint=ma.checkpoint_path,
         # no_cuda=True,       # use CPU
     )
     
@@ -132,9 +132,6 @@ def classifier_sft(dataset_name: str):
         finetuned_from=ma.model_path,
     )
     
-    trainer.save_state()
-    trainer.save_model()
-    
     train_result = trainer.train(resume_from_checkpoint=training_args.resume_from_checkpoint)
     
     trainer.log_metrics("train", train_result.metrics)
@@ -143,7 +140,7 @@ def classifier_sft(dataset_name: str):
     trainer.save_state()
     trainer.save_model()
 
-    trainer.push_to_hub()
+    trainer.push_to_hub("End of training", token=ma.hf_auth_token_w)
 
 
 def load_classifier():

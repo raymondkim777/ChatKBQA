@@ -186,5 +186,7 @@ tongji.py
 tongji_webqsp.py
 tongji_cwq.py
 
-# Files
+# Custom Files
 test_results/log*.json
+script_*.bash
+save_pid.txt
