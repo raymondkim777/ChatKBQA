@@ -23,7 +23,7 @@ def _parse_args():
     
     parser = argparse.ArgumentParser()
     parser.add_argument('--dataset', default='WebQSP', help='dataset to perform entity linking, should be WebQSP or CWQ')
-    parser.add_argument('--log', action='store_true', help='outputs log in test_results/test_log.json')
+    parser.add_argument('--log', action='store_true', help='outputs log in test_results/log*.json')
     return parser.parse_args()
 
 

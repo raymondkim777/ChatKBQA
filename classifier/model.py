@@ -1,7 +1,10 @@
 import classifier.model_args as ma
+from components.utils import load_json, dump_json
 
+import os
 import numpy as np
 import evaluate
+from tqdm import tqdm
 
 from datasets import load_dataset
 from transformers import (
@@ -10,7 +13,10 @@ from transformers import (
     AutoTokenizer,
     TrainingArguments,
     Trainer,
+    pipeline,
 )
+from transformers.pipelines.pt_utils import KeyDataset
+from huggingface_hub import HfApi
 
 
 OUTPUT_DIR = f"{ma.output_dir}/evaluation_beam"
@@ -18,11 +24,34 @@ CHECKPOINT_DIR = f"{ma.output_dir}/{ma.checkpoint_dir}"
 LOG_DIR = f"{ma.log_dir}"
 
 
+def open_write_file(dir_path, file_name):
+    """Opens a file for writing, or creates new file if file doesn't exist."""
+    
+    file_path = os.path.join(dir_path, file_name)
+    if not os.path.exists(os.path.dirname(file_path)):
+        os.makedirs(os.path.dirname(file_path))
+    return file_path
+
+
+def create_repo_clone():
+    # create folder
+    if not os.path.exists(CHECKPOINT_DIR):
+        os.makedirs(CHECKPOINT_DIR)
+    
+    # huggingface API
+    api = HfApi(token=ma.hf_auth_token_w)
+    api.upload_folder(
+        folder_path=CHECKPOINT_DIR,
+        repo_id="raymonddasushi/chatkbqa-bert-classifier",
+        repo_type="model",
+    )
+
+
 def load_classifier_model_and_tokenizer():
     config_kwargs = {
         "trust_remote_code": ma.trust_remote_code,
         "use_auth_token": ma.use_auth_token,
-        "token": ma.hf_auth_token,
+        "token": ma.hf_auth_token_w,
     }
     
     tokenizer = AutoTokenizer.from_pretrained(
@@ -83,7 +112,6 @@ def classifier_sft(dataset_name: str):
     def tokenize(examples):
         return tokenizer(examples["question"], padding="max_length", truncation=True)
     
-
     dataset = dataset.map(tokenize, batched=True)
     dataset.set_format(type="torch", columns=["input_ids", "token_type_ids", "attention_mask", "label"])
     
@@ -96,11 +124,18 @@ def classifier_sft(dataset_name: str):
         # predictions += 1
         # labels += 1
         return metric.compute(predictions=predictions, references=labels)
+    
+    # make sure repo is cloned
+    # create_repo_clone()
 
     training_args = TrainingArguments(
         output_dir=CHECKPOINT_DIR,
-        evaluation_strategy="epoch",
         
+        push_to_hub=ma.push_to_hub,
+        hub_model_id=ma.model_final_path,
+        hub_private_repo=ma.hub_private_repo,
+        
+        evaluation_strategy="epoch",
         learning_rate=ma.learning_rate,
         per_device_train_batch_size=ma.per_device_train_batch_size,
         per_device_eval_batch_size=ma.per_device_eval_batch_size,
@@ -115,6 +150,7 @@ def classifier_sft(dataset_name: str):
         save_strategy="steps",
         save_steps=ma.save_steps,
         resume_from_checkpoint=ma.checkpoint_path,
+        load_best_model_at_end=ma.load_best_model_at_end,
         # no_cuda=True,       # use CPU
     )
     
@@ -138,20 +174,63 @@ def classifier_sft(dataset_name: str):
     trainer.save_metrics("train", train_result.metrics)
     
     trainer.save_state()
-    trainer.save_model()
+    # trainer.save_model()
 
-    trainer.push_to_hub("End of training", token=ma.hf_auth_token_w)
+    # trainer.push_to_hub(token=ma.hf_auth_token_w)
 
 
-def load_classifier():
-    model_name_or_path = ma.model_final_path
-    device = "cuda"  # or "cpu" if no GPU
+def load_and_run_classifier(dataset_name: str):
+    # model_name_or_path = ma.model_final_path
+    local_model_path = CHECKPOINT_DIR
+    device = 0
     
-    model = AutoModelForSequenceClassification.from_pretrained(model_name_or_path).to(device)
-    tokenizer = AutoTokenizer.from_pretrained(model_name_or_path)  # maybe ma.model_path?
+    # data_train_path = f'data/{dataset_name}/generation/merged/{dataset_name}_train_class.json'
+    data_test_path = f'data/{dataset_name}/generation/merged/{dataset_name}_test_class.json'
+    # dataset = load_dataset("json", data_files={'train': data_train_path, 'test': data_test_path})
+    dataset = load_json(data_test_path)
     
-    inputs = tokenizer.encode("what does jamaican people speak", return_tensors="pt").to(device)
-    outputs = model.generate(inputs)
+    tokenizer = AutoTokenizer.from_pretrained(local_model_path)
+    model = AutoModelForSequenceClassification.from_pretrained(local_model_path)
+    classifier = pipeline("text-classification", model=model, tokenizer=tokenizer, device=device, framework="pt")
     
-    print(type(outputs))
-    print(outputs)
+    # inference
+    total_cnt = 0
+    match_cnt = 0
+    predictions = []
+    
+    for item in tqdm(dataset):
+        total_cnt += 1
+        output = classifier(item['question'])
+        output_idx = ['LABEL_0', 'LABEL_1', 'LABEL_2', 'LABEL_3', 'LABEL_4'].index(output[0]['label'])
+        
+        predictions.append({
+            "question": item['question'],
+            "gen_label": item['label'] + 1,     # relation cnt
+            "predictions": output_idx + 1,      # relation cnt
+        })
+        
+        if output_idx == item['label']:
+            match_cnt += 1
+    
+    # print statistics
+    print(f'Total lines: {total_cnt}')
+    print(f'Matched lines: {match_cnt}')
+    print(f'Percentage of matched lines: {match_cnt / total_cnt * 100}%')
+    
+    test_stats = {
+        "total": total_cnt,
+        "exmatch_num": match_cnt,
+        "exmatch_rate": match_cnt / total_cnt,
+    }
+    output_stats_dir = open_write_file(OUTPUT_DIR, 'test_gen_statistics.json')
+    dump_json(test_stats, output_stats_dir, indent=4)
+
+    # print results
+    output_results_dir = open_write_file(OUTPUT_DIR, 'generated_predictions.json')
+    dump_json(predictions, output_results_dir, indent=4)
+
+    
+    # text = "what money does spain use"
+    # output = classifier(text)
+    # print(text)
+    # print(output)
