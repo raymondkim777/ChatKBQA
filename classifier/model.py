@@ -135,7 +135,7 @@ def classifier_sft(dataset_name: str):
         hub_model_id=ma.model_final_path,
         hub_private_repo=ma.hub_private_repo,
         
-        evaluation_strategy="epoch",
+        evaluation_strategy="steps",
         learning_rate=ma.learning_rate,
         per_device_train_batch_size=ma.per_device_train_batch_size,
         per_device_eval_batch_size=ma.per_device_eval_batch_size,
@@ -191,6 +191,11 @@ def load_and_run_classifier(dataset_name: str):
     
     tokenizer = AutoTokenizer.from_pretrained(local_model_path)
     model = AutoModelForSequenceClassification.from_pretrained(local_model_path)
+    
+    # adjust zero-base string labels to one-base integer labels
+    model.config.id2label = {0:"1", 1:"2", 2:'3', 3:"4", 4:"5"}
+    # model.config.label2id = {"1":1, '2':2, "3":3, "4":4, '5':5}
+    
     classifier = pipeline("text-classification", model=model, tokenizer=tokenizer, device=device, framework="pt")
     
     # inference
@@ -201,15 +206,15 @@ def load_and_run_classifier(dataset_name: str):
     for item in tqdm(dataset):
         total_cnt += 1
         output = classifier(item['question'])
-        output_idx = ['LABEL_0', 'LABEL_1', 'LABEL_2', 'LABEL_3', 'LABEL_4'].index(output[0]['label'])
+        pred = int(output[0]['label'])
         
         predictions.append({
             "question": item['question'],
-            "gen_label": item['label'] + 1,     # relation cnt
-            "predictions": output_idx + 1,      # relation cnt
+            "gen_label": item['label'] + 1,     # change zero-index in dataset to one-index
+            "predictions": pred,
         })
         
-        if output_idx == item['label']:
+        if pred == item['label'] + 1:
             match_cnt += 1
     
     # print statistics

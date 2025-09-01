@@ -33,16 +33,36 @@ def prepare_dataloader(args,split):
     print(f'Real {split} dataset len: {len(examples)}')
 
     json_data=[]
-    instruction='Generate the number of relations a Logical Form query that retrieves the information corresponding to the given question should have, then use that information to generate the appropriate query. \n'
+    # instruction='Generate the number of relations a Logical Form query that retrieves the information corresponding to the given question should have, then use that information to generate the appropriate query. \n'
+    chat_instruction='Generate a Logical Form query that retrieves the information corresponding to the given question, where the generated Logical Form query matches the number of relations provided. \n'
+    
     for cnt, item in tqdm(enumerate(examples)):
         question=item['question']
         rel_cnt = str(item['rel_cnt'])
-        input = 'Question: { ' + question + ' }'     
-        output = 'Relation Count: { ' + rel_cnt  + ' }, Logical Form: { ' + item['normed_sexpr'] + ' }'
-        json_data.append({"instruction":instruction,"input":input,"output":output,"history":[]})
-               
+        chat_input = 'Question: { ' + question + ' }, Relation Count: { ' + rel_cnt + ' }'     
+        chat_output = item['normed_sexpr']
+        json_data.append({"instruction":chat_instruction,"input":chat_input,"output":chat_output,"history":[]})
     
     output_dir = 'LLMs/data/{}_Freebase_NQ_{}/examples.json'.format(args.dataset_type, split)
+
+    if not os.path.exists(os.path.dirname(output_dir)):
+        os.mkdir(os.path.dirname(output_dir))   
+
+    with open(output_dir, "w", encoding="utf-8") as file:
+        json.dump(json_data, file)    
+        
+    
+    # example data for full classifier/chat pipeline
+    json_data=[]
+    # chat_instruction='Generate the number of relations a Logical Form query that retrieves the information corresponding to the given question should have, then use that information to generate the appropriate query. \n'
+    chat_instruction='Generate a Logical Form query that retrieves the information corresponding to the given question, where the generated Logical Form query matches the number of relations provided. \n'
+    
+    for cnt, item in tqdm(enumerate(examples)):
+        question=item['question']
+        chat_output = item['normed_sexpr']
+        json_data.append({"question":question,"chat_instruction":chat_instruction,"chat_output":chat_output,"history":[]})
+    
+    output_dir = 'LLMs/data/{}_Freebase_NQ_{}_pipeline/examples.json'.format(args.dataset_type, split)
 
     if not os.path.exists(os.path.dirname(output_dir)):
         os.mkdir(os.path.dirname(output_dir))   
