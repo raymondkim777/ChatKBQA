@@ -43,9 +43,9 @@ log_dir = f"train_Bert-based-uncased_{dataset}_Freebase_NQ_log"
 # model parameters
 num_labels = 5
 learning_rate = 3e-5
-per_device_train_batch_size = 4
-per_device_eval_batch_size = 4
-gradient_accumulation_steps = 4
+per_device_train_batch_size = 2
+per_device_eval_batch_size = 2
+gradient_accumulation_steps = 2
 num_train_epochs = 50
 weight_decay = 0.1
 # logging_steps = 10

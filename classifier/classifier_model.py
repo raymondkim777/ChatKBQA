@@ -1,12 +1,8 @@
-from components.utils import load_json
 import classifier.model_args as ma
 from classifier.model import classifier_sft, load_and_run_classifier
 from transformers import (
-    AutoConfig,
     AutoModelForSequenceClassification,
     AutoTokenizer,
-    TrainingArguments,
-    Trainer,
     pipeline,
 )
 
@@ -17,7 +13,7 @@ DEVICE = 0
 
 class ClassifierModel:
     
-    def __init__(self, dataset_type: str):
+    def __init__(self):
         # model_name_or_path = ma.model_final_path
         local_model_path = CHECKPOINT_DIR
         
@@ -31,5 +27,6 @@ class ClassifierModel:
         self.pipeline = pipeline("text-classification", model=model, tokenizer=tokenizer, device=DEVICE, framework="pt")
     
     
-    def classify(self, query):
-        return self.pipeline(query)
+    def classify(self, query) -> int:
+        # pipeline output: [{'label': '0', 'score': 0.9999728202819824}]
+        return int(self.pipeline(query)['label'])

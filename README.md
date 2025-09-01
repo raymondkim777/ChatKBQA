@@ -213,6 +213,11 @@ python run_generator_final.py --data_file_name Reading/LLaMA2-7b/WebQSP_Freebase
 python CUSTOM_eval_llm_test.py
 ```
 
+(Added) Evaluate Classifier and LLM Pipeline:
+```bash
+CUDA_VISIBLE_DEVICES=2,3 nohup python -u LLMs/LLaMA/src/beam_output_pipeline.py >> predbeam_Full-Pipeline_WebQSP_Freebase_NQ.txt 2>&1 &
+```
+
 - CWQ: 
 
 Train LLMs for Logical Form Generation: (Note that terminal must be quit via `exit`, else process receives SIGHUP due to bug with nohup and DDP. For most streamlined use, use tmux.)

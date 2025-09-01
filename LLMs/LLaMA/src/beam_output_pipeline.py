@@ -1,6 +1,7 @@
 from classifier.classifier_model import ClassifierModel
 from llmtuner import ChatModel
 import json
+from components.utils import dump_json
 from tqdm import tqdm
 import re
 import os
@@ -8,6 +9,15 @@ from llmtuner.tuner.core import get_infer_args
 
 
 DATA_PIPELINE_PATH = os.path.join('LLMs/data', 'WebQSP_Freebase_NQ_test_pipeline', 'examples.json')
+OUTPUT_DIR = os.path.join('Reading', 'Full_Pipeline')
+
+
+def open_write_file(dir_path, file_name):
+    """Opens a file for writing, or creates new file if file doesn't exist."""
+    file_path = os.path.join(dir_path, file_name)
+    if not os.path.exists(os.path.dirname(file_path)):
+        os.makedirs(os.path.dirname(file_path))
+    return file_path
 
 
 def main():
@@ -15,7 +25,6 @@ def main():
     class_model = ClassifierModel()
     chat_model = ChatModel()
     output_data = []
-    
     
     with open(DATA_PIPELINE_PATH, 'r', encoding='utf-8') as f:
         json_data = json.load(f)        
@@ -26,15 +35,26 @@ def main():
 
         for data in tqdm(json_data):
             total_lines += 1
+            
             # classifer
-            predicted_rel_cnt = class_model.classify(data['question'])
+            predicted_rel_cnt = class_model.classify(data['question'])  # integer
             
             # chatkbqa llm
-            chat_input = 'Question: { ' + data['question'] + ' }, Relation Count: { ' + predicted_rel_cnt + ' }'    
+            chat_input = 'Question: { ' + data['question'] + ' }, Relation Count: { ' + str(predicted_rel_cnt) + ' }'    
             query = data['instruction'] + chat_input
             predict = chat_model.chat_beam(query)
             predict = [p[0] for p in predict]
-            output_data.append({'label':data['output'],'predict':predict})
+            
+            # output data
+            output_data.append({
+                'question': data['question'],
+                'rel_label': data['rel_cnt'],
+                'rel_predict': predicted_rel_cnt,
+                'lf_label': data['output'],
+                'lf_predict': predict,
+            })
+            
+            # statistics
             for p in predict:
                 if data['output'] == p:
                     matched_lines += 1
@@ -43,7 +63,6 @@ def main():
                 if re.sub(r'\[.*?\]', '', data['output']) == re.sub(r'\[.*?\]', '', p):
                     will_matched_lines += 1
                     break
-       
 
     print(f"Total lines: {total_lines}")
     print(f"Matched lines: {matched_lines}")
@@ -55,14 +74,9 @@ def main():
     will_percentage = (will_matched_lines / total_lines) * 100
     print(f"Percentage of will matched lines: {will_percentage:.2f}%")
     
+    output_path = open_write_file(OUTPUT_DIR, 'generated_predictions.json')
+    dump_json(output_data, output_path, indent=4)
     
-    output_dir = os.path.join(os.path.dirname(model_args.checkpoint_dir[0]),'evaluation_beam/generated_predictions.jsonl')
-    if not os.path.exists(os.path.dirname(output_dir)):
-        os.makedirs(os.path.dirname(output_dir))
-    with open(output_dir, 'w') as f:
-        for item in output_data:
-            json_string = json.dumps(item)
-            f.write(json_string + '\n')
-    
+
 if __name__ == "__main__":
     main()

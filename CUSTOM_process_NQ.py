@@ -60,7 +60,12 @@ def prepare_dataloader(args,split):
     for cnt, item in tqdm(enumerate(examples)):
         question=item['question']
         chat_output = item['normed_sexpr']
-        json_data.append({"question":question,"chat_instruction":chat_instruction,"chat_output":chat_output,"history":[]})
+        json_data.append({
+            "question": question,
+            "rel_cnt": item['rel_cnt'],
+            "chat_instruction": chat_instruction,
+            "chat_output": chat_output,
+            "history": []})
     
     output_dir = 'LLMs/data/{}_Freebase_NQ_{}_pipeline/examples.json'.format(args.dataset_type, split)
 

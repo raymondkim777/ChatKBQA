@@ -23,7 +23,11 @@ def main():
             query = data['instruction']+data['input']
             predict = chat_model.chat_beam(query)
             predict = [p[0] for p in predict]
-            output_data.append({'label':data['output'],'predict':predict})
+            output_data.append({
+                'label': data['output'],
+                'rel_cnt': int(data['input'][-3:-2]),   # parse rel_cnt from input (for error analysis later)
+                'predict': predict
+            })
             for p in predict:
                 # 4. 检查"label"和"predict"的值是否相等
                 if data['output'] == p:
