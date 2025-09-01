@@ -135,7 +135,7 @@ def classifier_sft(dataset_name: str):
         hub_model_id=ma.model_final_path,
         hub_private_repo=ma.hub_private_repo,
         
-        evaluation_strategy="steps",
+        # evaluation_strategy="steps",
         learning_rate=ma.learning_rate,
         per_device_train_batch_size=ma.per_device_train_batch_size,
         per_device_eval_batch_size=ma.per_device_eval_batch_size,
