@@ -1,7 +1,7 @@
 import os
 import argparse
 import json
-from components.utils import dump_json
+from components.utils import load_json, dump_json
 
 
 def open_write_file(dir_path, file_name):
@@ -21,14 +21,8 @@ def _parse_args():
 
 
 def prepare_dataloader(dataset: str):
-    model_type = 'LLaMA2-7b' if dataset == 'WebQSP' else 'LLaMA-2-13b'
-    epoch_cnt = '100' if dataset == 'WebQSP' else '10'
-    data_file_path = f"Reading/{model_type}/{dataset}_Freebase_NQ_lora_epoch{epoch_cnt}/evaluation_beam/generated_predictions.jsonl"
-
-    print('Loading data from:', data_file_path)
-    with open(data_file_path, 'r', encoding='utf-8') as f:
-        data = [json.loads(line) for line in f]
-    return data
+    data_file_path = f'Reading/Full_Pipeline/{dataset}_Freebase_NQ/evaluation_beam/generated_predictions.json'
+    return load_json(data_file_path)
 
 
 def remove_entity_relation_placeholders(output: str):
@@ -63,21 +57,36 @@ def remove_entity_relation_placeholders(output: str):
 
 def check_structure(dataloader: list, dataset: str, log_result: bool):
     print()
-    print('Checking structure mismatches in LLM LF generation ')
+    print('Checking Classifier (rel_cnt prediction) & LLM (LF generation) Results')
     
+    # data structure:
+    # {
+    #     "question": "what does jamaican people speak",
+    #     "rel_label": 1,
+    #     "rel_predict": 1,
+    #     "label": "( JOIN ( R [ location , country , languages spoken ] ) [ Jamaica ] )",
+    #     "predict": [
+    #         "( JOIN ( R [ location , country , languages spoken ] ) [ Jamaica ] )"
+    #     ]
+    # },
+
     match_cnt = 0
     mismatch_cnt = 0
     total_cnt = 0
-    rel_match_cnt = 0
-    rel_mismatch_cnt = 0
+    rel_predict_match_cnt = 0
+    rel_predict_mismatch_cnt = 0
+    rel_predict_lf_mismatch_cnt = 0
     rel_match_lf_mismatch_cnt = 0
+    rel_match_lf_rel_match_lf_mismatch_cnt = 0
 
     match_data = []
     mismatch_data = []
+    log_rel_mismatch_freq = {1: 0, 2:0, 3:0, 4:0, 5:0}
     log_rel_mismatch_data = []
+    log_rel_predict_lf_mismatch_data = []
     log_rel_match_lf_mismatch_data = []
-
-    for i, pred in enumerate(dataloader):
+    
+    for pred in dataloader:
         predictions = pred['predict']   # list of S-exp strings
         gen_label = pred['label']       # S-exp string
 
@@ -92,18 +101,20 @@ def check_structure(dataloader: list, dataset: str, log_result: bool):
             
             if pred_skeleton == gold_skeleton:
                 match_cnt += 1
-                rel_match_cnt += 1
+                rel_predict_match_cnt += 1
                 match_data.append({
-                    'NLQuest': None,
-                    'rel_cnt': pred['rel_cnt'],
+                    'NLQuest': pred['question'],
+                    'rel_cnt': pred['rel_label'],
+                    'rel_pre': pred['rel_predict'],
                     'pred_sk': pred_skeleton, 
                     'gold_sk': gold_skeleton,
                 })
             else:
                 mismatch_cnt += 1
                 mismatch_obj = {
-                    'NLQuest': None, 
-                    'rel_cnt': pred['rel_cnt'],
+                    'NLQuest': pred['question'],
+                    'rel_cnt': pred['rel_label'],
+                    'rel_pre': pred['rel_predict'],
                     'pred_sk': pred_skeleton, 
                     'gold_sk': gold_skeleton,
                     'pred_lf': predict,
@@ -111,29 +122,38 @@ def check_structure(dataloader: list, dataset: str, log_result: bool):
                 }
                 mismatch_data.append(mismatch_obj)
                 
-                # Compare if LF has correct rel cnt as input rel_cnt
-                if pred_skeleton.count('rel') != pred['rel_cnt']:
-                    rel_mismatch_cnt += 1
+                # classifier performance
+                if pred['rel_label'] != pred['rel_predict']:
+                    rel_predict_mismatch_cnt += 1
                     if log_result:
+                        log_rel_mismatch_freq[pred['rel_predict']] += 1
                         log_rel_mismatch_data.append(mismatch_obj)
-                else:
-                    rel_match_cnt += 1
+                else:  # pipeline performance
+                    rel_predict_match_cnt += 1
                     rel_match_lf_mismatch_cnt += 1
                     if log_result:
                         log_rel_match_lf_mismatch_data.append(mismatch_obj)
-    
+                    if pred_skeleton.count('rel') == pred['rel_predict']:
+                        rel_match_lf_rel_match_lf_mismatch_cnt += 1
+                
+                # llm performance
+                if pred_skeleton.count('rel') != pred['rel_predict']:
+                    rel_predict_lf_mismatch_cnt += 1
+                    if log_result:
+                        log_rel_predict_lf_mismatch_data.append(mismatch_obj)
+
     # print statistics
     print("Total predictions:", total_cnt)
-    print("Match rate:", match_cnt / total_cnt)
-    print("Mismatch rate:", mismatch_cnt / total_cnt)
-    print("Rel(X) rate:", rel_mismatch_cnt / total_cnt)
-    print("Rel(O) LF(X) rate:", rel_match_lf_mismatch_cnt / rel_match_cnt)
+    print("Overall Match rate:", match_cnt / total_cnt)
+    print("Overall Mismatch rate:", mismatch_cnt / total_cnt)
+    print("Classifier Rel(X) rate:", rel_predict_mismatch_cnt / total_cnt)
+    print("LLM Rel(X) rate:", rel_predict_lf_mismatch_cnt / total_cnt)
+    print("Classifier Rel(O) LLM LF(X) rate:", rel_match_lf_mismatch_cnt / rel_predict_match_cnt)
+    print("Classifier Rel(O) LLM Rel(O) LLM LF(X) rate:", rel_match_lf_rel_match_lf_mismatch_cnt / rel_predict_match_cnt)
     print()
 
     # JSON
-    model_type = 'LLaMA2-7b' if dataset == 'WebQSP' else 'LLaMA-2-13b'
-    epoch_cnt = '100' if dataset == 'WebQSP' else '10'
-    output_dir = f"Reading/{model_type}/{dataset}_Freebase_NQ_lora_epoch{epoch_cnt}/test_results"
+    output_dir = f"Reading/Full_Pipeline/{dataset}_Freebase_NQ/test_results"
     
     match_file_path = open_write_file(output_dir, f'lf_skeleton_match.json')
     dump_json(match_data, match_file_path, indent=4)

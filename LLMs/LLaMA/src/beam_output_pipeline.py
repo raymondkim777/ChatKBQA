@@ -8,7 +8,7 @@ import os
 
 
 DATA_PIPELINE_PATH = os.path.join('LLMs/data', 'WebQSP_Freebase_NQ_test_pipeline', 'examples.json')
-OUTPUT_DIR = os.path.join('Reading', 'Full_Pipeline')
+OUTPUT_DIR = os.path.join('Reading', 'Full_Pipeline', 'WebQSP_Freebase_NQ', 'evaluation_beam')
 
 
 def open_write_file(dir_path, file_name):
