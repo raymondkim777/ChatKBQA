@@ -1,5 +1,5 @@
 import classifier.model_args as ma
-from components.utils import load_json, dump_json
+import json
 
 import os
 import numpy as np
@@ -187,7 +187,8 @@ def load_and_run_classifier(dataset_name: str):
     # data_train_path = f'data/{dataset_name}/generation/merged/{dataset_name}_train_class.json'
     data_test_path = f'data/{dataset_name}/generation/merged/{dataset_name}_test_class.json'
     # dataset = load_dataset("json", data_files={'train': data_train_path, 'test': data_test_path})
-    dataset = load_json(data_test_path)
+    with open(data_test_path, mode="r", encoding="utf8") as f:
+        dataset = json.load(f)      # ! might break
     
     tokenizer = AutoTokenizer.from_pretrained(local_model_path)
     model = AutoModelForSequenceClassification.from_pretrained(local_model_path)
@@ -228,11 +229,13 @@ def load_and_run_classifier(dataset_name: str):
         "exmatch_rate": match_cnt / total_cnt,
     }
     output_stats_dir = open_write_file(OUTPUT_DIR, 'test_gen_statistics.json')
-    dump_json(test_stats, output_stats_dir, indent=4)
+    with open(output_stats_dir, "w", encoding="utf8") as f:
+        json.dump(test_stats, f, indent=4, ensure_ascii=False)      # ! might break
 
     # print results
     output_results_dir = open_write_file(OUTPUT_DIR, 'generated_predictions.json')
-    dump_json(predictions, output_results_dir, indent=4)
+    with open(output_results_dir, "w", encoding="utf8") as f:
+        json.dump(predictions, f, indent=4, ensure_ascii=False)     # ! might break
 
     
     # text = "what money does spain use"

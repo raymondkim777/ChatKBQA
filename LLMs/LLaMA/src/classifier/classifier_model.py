@@ -29,4 +29,4 @@ class ClassifierModel:
     
     def classify(self, query) -> int:
         # pipeline output: [{'label': '0', 'score': 0.9999728202819824}]
-        return int(self.pipeline(query)['label'])
+        return int(self.pipeline(query)[0]['label'])
