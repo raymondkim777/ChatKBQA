@@ -55,9 +55,18 @@ def remove_entity_relation_placeholders(output: str):
 def check_structure(dataloader: list):
     print()
     print('Checking structure mismatches ')
+    
+    # ! HAVE TO RUN beam_output_eva.py AGAIN
+    match_cnt = 0
+    mismatch_cnt = 0
+    total_cnt = 0
+    rel_mismatch = 0
+    rel_match_lf_mismatch = 0
 
     match_data = []
     mismatch_data = []
+    log_rel_mismatch = []
+    log_rel_match_lf_mismatch = []
 
     for i, pred in enumerate(dataloader):
         predictions = pred['predict']   # list of S-exp strings
