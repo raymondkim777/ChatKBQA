@@ -72,6 +72,8 @@ def check_structure(dataloader: list, dataset: str, log_result: bool):
 
     match_cnt = 0
     mismatch_cnt = 0
+    contains_cnt = 0
+    class_cnt = 0
     total_cnt = 0
     rel_predict_match_cnt = 0
     rel_predict_mismatch_cnt = 0
@@ -93,15 +95,20 @@ def check_structure(dataloader: list, dataset: str, log_result: bool):
 
         if gen_label.lower() == 'null':
             continue
+        
+        # contains
+        contains_true = False
 
         # remove entity/relation placeholder tokens
         for predict in predictions:
             total_cnt += 1
             pred_skeleton = remove_entity_relation_placeholders(predict)
             gold_skeleton = remove_entity_relation_placeholders(gen_label)
-            total_rel_count_freq[pred['rel_label']] += 1
             
             if pred_skeleton == gold_skeleton:
+                if not contains_true:
+                    contains_cnt += 1
+                    contains_true = True
                 match_cnt += 1
                 rel_predict_match_cnt += 1
                 match_data.append({
@@ -126,8 +133,6 @@ def check_structure(dataloader: list, dataset: str, log_result: bool):
                 
                 # classifier performance
                 if pred['rel_label'] != pred['rel_predict']:
-                    rel_predict_mismatch_cnt += 1
-                    rel_predict_mismatch_freq[pred['rel_label']] += 1
                     if log_result:
                         log_rel_mismatch_data.append(mismatch_obj)
                 else:  # pipeline performance
@@ -143,6 +148,13 @@ def check_structure(dataloader: list, dataset: str, log_result: bool):
                     rel_predict_lf_mismatch_cnt += 1
                     if log_result:
                         log_rel_predict_lf_mismatch_data.append(mismatch_obj)
+        
+        # classifier stats
+        class_cnt += 1
+        total_rel_count_freq[pred['rel_label']] += 1
+        if pred['rel_label'] != pred['rel_predict']:
+            rel_predict_mismatch_cnt += 1
+            rel_predict_mismatch_freq[pred['rel_label']] += 1
 
     log_rel_mismatch_rates = { cnt: float(f"{rel_predict_mismatch_freq[cnt] / total_rel_count_freq[cnt]:.2f}") for cnt in range(1, 6)}
     
@@ -150,7 +162,8 @@ def check_structure(dataloader: list, dataset: str, log_result: bool):
     print("Total predictions:", total_cnt)
     print("Overall Match rate:", match_cnt / total_cnt)
     print("Overall Mismatch rate:", mismatch_cnt / total_cnt)
-    print("Classifier Rel(X) rate:", rel_predict_mismatch_cnt / total_cnt)
+    print("Contains Match Rate:", contains_cnt / class_cnt)
+    print("Classifier Rel(X) rate:", rel_predict_mismatch_cnt / class_cnt)
     print("Classifier Rel(X) rate per cnt:", log_rel_mismatch_rates)
     print("LLM Rel(X) rate:", rel_predict_lf_mismatch_cnt / total_cnt)
     print("Classifier Rel(O) LLM LF(X) rate:", rel_match_lf_mismatch_cnt / rel_predict_match_cnt)
