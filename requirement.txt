@@ -29,7 +29,6 @@ ptvsd
 simcse
 wandb
 sse-starlette
-transformers
 fastapi
 uvicorn
 tiktoken
