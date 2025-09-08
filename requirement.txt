@@ -23,13 +23,11 @@ cvxpy
 colorama
 termcolor
 flair
-pytorch-transformers
 flask
 ptvsd
 simcse
 wandb
 sse-starlette
-transformers
 fastapi
 uvicorn
 tiktoken
