@@ -159,7 +159,7 @@ cython_debug/
 #  option (not recommended) you can uncomment the following to ignore the entire idea folder.
 #.idea/
 
-Freebase-Setup/virtuoso_db
+Freebase-Setup/virtuoso_db*
 data/common_data/*
 data/CWQ/generation/*
 data/CWQ/sexpr/*
