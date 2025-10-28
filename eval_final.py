@@ -12,7 +12,7 @@ import difflib
 import itertools
 from simcse import SimCSE
 import shutil
-model = SimCSE("princeton-nlp/unsup-simcse-roberta-large")
+model = SimCSE("princeton-nlp/unsup-simcse-roberta-large")  # may have to use contriever if simCSE doesn't work due to numpy restriction
 
 def is_number(t):
     t = t.replace(" , ",".")
